@@ -11,6 +11,7 @@
 #import "ImageGenerator.h"
 #import "ImagePreviewViewController.h"
 #import "ReminderCell.h"
+#import "SVProgressHUD.h"
 
 @interface ListViewController ()
 
