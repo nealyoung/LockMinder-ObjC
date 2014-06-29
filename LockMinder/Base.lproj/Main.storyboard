@@ -95,7 +95,98 @@
             </objects>
             <point key="canvasLocation" x="199" y="766"/>
         </scene>
+        <!--Image Preview View Controller-->
+        <scene sceneID="NPK-Pa-PUV">
+            <objects>
+                <viewController storyboardIdentifier="ImagePreviewViewController" id="kk5-JM-RUa" customClass="ImagePreviewViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8oJ-qZ-ZTl"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vcd-z4-jzp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Q3b-30-H6Q">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="b4C-Y4-O0u">
+                                <rect key="frame" x="0.0" y="-20" width="322" height="588"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psa-Sg-Sm4">
+                                <rect key="frame" x="0.0" y="518" width="161" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.65000000000000002" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="253-rh-krO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="kk5-JM-RUa" eventType="touchUpInside" id="NEO-PE-6Yx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0b9-VE-PU2">
+                                <rect key="frame" x="161" y="518" width="161" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="0.66000000000000003" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="MDs-2H-uQg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="kk5-JM-RUa" eventType="touchUpInside" id="D7p-l4-1Iq"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="9:41" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhc-08-JdU">
+                                <rect key="frame" x="0.0" y="20" width="320" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="90"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tuesday, June 11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDt-9e-J1Q">
+                                <rect key="frame" x="73" y="112" width="175" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Vcd-z4-jzp" firstAttribute="top" secondItem="psa-Sg-Sm4" secondAttribute="bottom" id="3Jo-5v-mcg"/>
+                            <constraint firstItem="psa-Sg-Sm4" firstAttribute="width" secondItem="0b9-VE-PU2" secondAttribute="width" id="9Po-d8-W68"/>
+                            <constraint firstAttribute="trailing" secondItem="0b9-VE-PU2" secondAttribute="trailing" id="GTk-QQ-7d4"/>
+                            <constraint firstItem="Vcd-z4-jzp" firstAttribute="top" secondItem="b4C-Y4-O0u" secondAttribute="bottom" id="Q0B-nS-TWW"/>
+                            <constraint firstItem="psa-Sg-Sm4" firstAttribute="leading" secondItem="Q3b-30-H6Q" secondAttribute="leading" id="WY9-od-oG8"/>
+                            <constraint firstItem="b4C-Y4-O0u" firstAttribute="leading" secondItem="Q3b-30-H6Q" secondAttribute="leading" id="Xgu-39-b19"/>
+                            <constraint firstItem="0b9-VE-PU2" firstAttribute="leading" secondItem="psa-Sg-Sm4" secondAttribute="trailing" id="aa1-fK-mKg"/>
+                            <constraint firstItem="b4C-Y4-O0u" firstAttribute="top" secondItem="8oJ-qZ-ZTl" secondAttribute="bottom" constant="-20" id="fEL-Gx-y6c"/>
+                            <constraint firstAttribute="trailing" secondItem="b4C-Y4-O0u" secondAttribute="trailing" id="m78-A0-We7"/>
+                            <constraint firstItem="Vcd-z4-jzp" firstAttribute="top" secondItem="0b9-VE-PU2" secondAttribute="bottom" id="na6-KG-SVq"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="cancelButton" destination="psa-Sg-Sm4" id="ZTz-yL-3Zm"/>
+                        <outlet property="imageView" destination="b4C-Y4-O0u" id="lBY-MD-5ta"/>
+                        <outlet property="saveButton" destination="0b9-VE-PU2" id="8yz-wq-CA0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gID-9V-akF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="199" y="1379"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="Wallpaper" width="320" height="568"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

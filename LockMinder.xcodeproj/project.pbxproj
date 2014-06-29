@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E3127D01960BC7C001A7238 /* ImagePreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3127CE1960BC7C001A7238 /* ImagePreviewViewController.m */; };
+		0E3127D41960BD79001A7238 /* ImageGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3127D31960BD79001A7238 /* ImageGenerator.m */; };
 		0E3CFD61195FE99900CBF5DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3CFD60195FE99900CBF5DD /* main.m */; };
 		0E3CFD64195FE99900CBF5DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3CFD63195FE99900CBF5DD /* AppDelegate.m */; };
 		0E3CFD67195FE99900CBF5DD /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3CFD66195FE99900CBF5DD /* ListViewController.m */; };
@@ -30,6 +32,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E3127CD1960BC7C001A7238 /* ImagePreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagePreviewViewController.h; sourceTree = "<group>"; };
+		0E3127CE1960BC7C001A7238 /* ImagePreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagePreviewViewController.m; sourceTree = "<group>"; };
+		0E3127D21960BD79001A7238 /* ImageGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageGenerator.h; sourceTree = "<group>"; };
+		0E3127D31960BD79001A7238 /* ImageGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageGenerator.m; sourceTree = "<group>"; };
 		0E3CFD5B195FE99900CBF5DD /* LockMinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LockMinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E3CFD5F195FE99900CBF5DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E3CFD60195FE99900CBF5DD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -68,6 +74,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E3127D51960C3E0001A7238 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0E3CFD65195FE99900CBF5DD /* ListViewController.h */,
+				0E3CFD66195FE99900CBF5DD /* ListViewController.m */,
+				0E3127CD1960BC7C001A7238 /* ImagePreviewViewController.h */,
+				0E3127CE1960BC7C001A7238 /* ImagePreviewViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		0E3CFD52195FE99900CBF5DD = {
 			isa = PBXGroup;
 			children = (
@@ -92,8 +109,9 @@
 			children = (
 				0E3CFD62195FE99900CBF5DD /* AppDelegate.h */,
 				0E3CFD63195FE99900CBF5DD /* AppDelegate.m */,
-				0E3CFD65195FE99900CBF5DD /* ListViewController.h */,
-				0E3CFD66195FE99900CBF5DD /* ListViewController.m */,
+				0E3127D51960C3E0001A7238 /* View Controllers */,
+				0E3127D21960BD79001A7238 /* ImageGenerator.h */,
+				0E3127D31960BD79001A7238 /* ImageGenerator.m */,
 				0EDBDC0E196012BA00B2A87A /* CheckmarkButton.h */,
 				0EDBDC0F196012BA00B2A87A /* CheckmarkButton.m */,
 				0EE3827D19609CDA0051CB6B /* ReminderCell.h */,
@@ -234,8 +252,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E3CFD67195FE99900CBF5DD /* ListViewController.m in Sources */,
+				0E3127D01960BC7C001A7238 /* ImagePreviewViewController.m in Sources */,
 				0EDBDC10196012BA00B2A87A /* CheckmarkButton.m in Sources */,
 				0E3CFD64195FE99900CBF5DD /* AppDelegate.m in Sources */,
+				0E3127D41960BD79001A7238 /* ImageGenerator.m in Sources */,
 				0E3CFD61195FE99900CBF5DD /* main.m in Sources */,
 				0EE3827F19609CDA0051CB6B /* ReminderCell.m in Sources */,
 			);

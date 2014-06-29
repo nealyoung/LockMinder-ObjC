@@ -8,6 +8,8 @@
 
 #import <EventKit/EventKit.h>
 #import "ListViewController.h"
+#import "ImageGenerator.h"
+#import "ImagePreviewViewController.h"
 #import "ReminderCell.h"
 
 @interface ListViewController ()
@@ -16,17 +18,10 @@
 @property NSMutableArray *reminders;
 @property IBOutlet UITableView *tableView;
 
-- (UIImage *)createBackgroundImage;
+- (void)generateButtonPressed;
 - (void)importReminders;
 
 @end
-
-static CGFloat const kReminderBackgroundMargin = 20.0f;
-static CGFloat const kClockHeight = 160.0f;
-static CGFloat const kSliderHeight = 90.0f;
-
-static CGFloat const kListItemMargin = 15.0f;
-static CGFloat const kListItemHeight = 24.0f;
 
 @implementation ListViewController
             
@@ -38,7 +33,7 @@ static CGFloat const kListItemHeight = 24.0f;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Generate"
                                                                              style:UIBarButtonItemStyleBordered
                                                                             target:self
-                                                                            action:@selector(createBackgroundImage)];
+                                                                            action:@selector(generateButtonPressed)];
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
@@ -47,44 +42,25 @@ static CGFloat const kListItemHeight = 24.0f;
     // Dispose of any resources that can be recreated.
 }
 
-- (UIImage *)createBackgroundImage {
-    CGRect screenBounds = [UIScreen mainScreen].bounds;
-    UIGraphicsBeginImageContext(screenBounds.size);
-    CGContextRef ctx = UIGraphicsGetCurrentContext();
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+    [super setEditing:editing animated:animated];
+    self.tableView.editing = editing;
+}
+
+- (void)generateButtonPressed {
+    if (![self.reminders count]) {
+        return;
+    }
     
-    UIImage *wallpaperImage = [UIImage imageNamed:@"WallpaperTest"];
-    [wallpaperImage drawInRect:[UIScreen mainScreen].bounds];
+    UIImage *wallpaperImage = [ImageGenerator wallpaperImageWithBackground:[UIImage imageNamed:@"Wallpaper"] reminders:self.reminders];
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ImagePreviewViewController *previewViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"ImagePreviewViewController"];
     
-    // Determine the size of the overlay
-    CGRect reminderBackgroundRect = CGRectMake(kReminderBackgroundMargin,
-                                               kClockHeight,
-                                               screenBounds.size.width - kReminderBackgroundMargin * 2.0f,
-                                               screenBounds.size.height - kClockHeight - kSliderHeight);
-    UIBezierPath *reminderBackgroundPath = [UIBezierPath bezierPathWithRoundedRect:reminderBackgroundRect
-                                                                 byRoundingCorners:UIRectCornerAllCorners
-                                                                       cornerRadii:CGSizeMake(10.0f, 10.0f)];
-    CGContextAddPath(ctx, reminderBackgroundPath.CGPath);
-    CGContextSetFillColorWithColor(ctx, [[UIColor colorWithWhite:1.0f alpha:0.8f] CGColor]);
-    CGContextFillPath(ctx);
+    // Access the view controller's view property to instantiate the image view
+    [previewViewController view];
+    previewViewController.imageView.image = wallpaperImage;
     
-    [self.reminders enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        EKReminder *reminder = (EKReminder *)obj;
-        CGRect listItemRect = CGRectMake(CGRectGetMinX(reminderBackgroundRect) + kListItemMargin,
-                                         CGRectGetMinY(reminderBackgroundRect) + kListItemMargin + (kListItemHeight * idx),
-                                         CGRectGetWidth(reminderBackgroundRect) - 30.0f,
-                                         20.0f);
-        [reminder.title drawInRect:listItemRect
-                    withAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Light" size:16.0f]}];
-    }];
-    
-    // Create the UIImage to save to the user's photo library
-    CGImageRef img = CGBitmapContextCreateImage(ctx);
-    UIImage *backgroundImage = [UIImage imageWithCGImage:img];
-    CGImageRelease(img);
-    
-    UIGraphicsEndImageContext();
-    
-    return backgroundImage;
+    [self.navigationController presentViewController:previewViewController animated:YES completion:nil];
 }
 
 - (void)importReminders {
@@ -113,11 +89,6 @@ static CGFloat const kListItemHeight = 24.0f;
             });
         }];
     }];
-}
-
-- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
-    [super setEditing:editing animated:animated];
-    self.tableView.editing = editing;
 }
 
 #pragma mark - UITableViewDataSource
