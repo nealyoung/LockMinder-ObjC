@@ -10,4 +10,6 @@
 
 @interface CheckmarkButton : UIView
 
+@property (nonatomic) BOOL selected;
+
 @end

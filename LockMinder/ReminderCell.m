@@ -10,4 +10,9 @@
 
 @implementation ReminderCell
 
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+    self.checkmarkButton.selected = selected;
+}
+
 @end

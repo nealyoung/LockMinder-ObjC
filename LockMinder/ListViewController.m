@@ -136,16 +136,4 @@
     [self.reminders insertObject:reminder atIndex:destinationIndexPath.row];
 }
 
-#pragma mark - UITableViewDelegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    ReminderCell *cell = (ReminderCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-    cell.checkmarkButton.selected = YES;
-}
-
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
-    ReminderCell *cell = (ReminderCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-    cell.checkmarkButton.selected = NO;
-}
-
 @end

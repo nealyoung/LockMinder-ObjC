@@ -54,8 +54,8 @@ static CGFloat const kListItemHeight = 25.0f;
                                          CGRectGetMinY(reminderBackgroundRect) + kListItemXInset + (kListItemHeight * idx),
                                          CGRectGetWidth(reminderBackgroundRect) - 30.0f,
                                          20.0f);
-        [reminder.title drawInRect:listItemRect
-                    withAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Light" size:16.0f]}];
+        [[NSString stringWithFormat:@"· %@", reminder.title] drawInRect:listItemRect
+                                                         withAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Light" size:17.0f]}];
     }];
     
     // Create the UIImage to save to the user's photo library

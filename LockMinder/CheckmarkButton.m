@@ -24,10 +24,6 @@ static CGFloat const kCheckboxInset = 2.0f;
     return self;
 }
 
-//- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-//    self.selected = !self.selected;
-//}
-
 - (void)drawRect:(CGRect)rect {
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     UIBezierPath *borderPath = [UIBezierPath bezierPathWithOvalInRect:CGRectInset(rect, kCheckboxInset, kCheckboxInset)];
@@ -57,7 +53,7 @@ static CGFloat const kCheckboxInset = 2.0f;
 }
 
 - (void)setSelected:(BOOL)selected {
-    [super setSelected:selected];
+    _selected = selected;
     [self setNeedsDisplay];
 }
 
