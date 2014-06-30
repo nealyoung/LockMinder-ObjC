@@ -17,6 +17,7 @@
 
 @property EKEventStore *eventStore;
 @property NSMutableArray *reminders;
+@property NSMutableArray *selectedReminders;
 @property IBOutlet UITableView *tableView;
 
 - (void)generateButtonPressed;
@@ -54,10 +55,26 @@
 
 - (void)generateButtonPressed {
     if (![self.reminders count]) {
+        [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"You need at least one reminder", nil)];
         return;
     }
+
+    NSMutableArray *remindersToShow;
     
-    UIImage *wallpaperImage = [ImageGenerator wallpaperImageWithBackground:[UIImage imageNamed:@"Wallpaper"] reminders:self.reminders];
+    // If the user has not selected any reminders, use all incomplete reminders
+    // Otherwise, use only the selected reminders
+    NSArray *selectedIndexPaths = [self.tableView indexPathsForSelectedRows];
+    if ([selectedIndexPaths count]) {
+        remindersToShow = [NSMutableArray array];
+        
+        for (NSIndexPath *indexPath in selectedIndexPaths) {
+            [remindersToShow addObject:self.reminders[indexPath.row]];
+        }
+    } else {
+        remindersToShow = self.reminders;
+    }
+    
+    UIImage *wallpaperImage = [ImageGenerator wallpaperImageWithBackground:[UIImage imageNamed:@"Wallpaper"] reminders:remindersToShow];
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ImagePreviewViewController *previewViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"ImagePreviewViewController"];
     
@@ -117,6 +134,18 @@
     EKReminder *reminder = self.reminders[sourceIndexPath.row];
     [self.reminders removeObjectAtIndex:sourceIndexPath.row];
     [self.reminders insertObject:reminder atIndex:destinationIndexPath.row];
+}
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ReminderCell *cell = (ReminderCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+    cell.checkmarkButton.selected = YES;
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ReminderCell *cell = (ReminderCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+    cell.checkmarkButton.selected = NO;
 }
 
 @end

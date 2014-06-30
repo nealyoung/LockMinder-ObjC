@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CheckmarkButton : UIControl
+@interface CheckmarkButton : UIView
 
 @end

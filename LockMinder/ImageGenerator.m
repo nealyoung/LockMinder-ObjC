@@ -11,10 +11,9 @@
 
 @implementation ImageGenerator
 
-static CGFloat const kListInset = 20.0f;
 static CGFloat const kClockHeight = 160.0f;
 static CGFloat const kSliderHeight = 90.0f;
-
+static CGFloat const kListInset = 20.0f;
 static CGFloat const kListItemXInset = 15.0f;
 static CGFloat const kListItemHeight = 25.0f;
 
