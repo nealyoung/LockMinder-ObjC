@@ -10,12 +10,16 @@
 
 @interface AppDelegate ()
 
+- (void)customizeAppearance;
+
 @end
 
 @implementation AppDelegate
             
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [self customizeAppearance];
+    
     // Override point for customization after application launch.
     return YES;
 }
@@ -40,6 +44,14 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)customizeAppearance {
+    self.window.tintColor = [UIColor whiteColor];
+
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    NSDictionary *navigationBarTitleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
+    [[UINavigationBar appearance] setTitleTextAttributes:navigationBarTitleTextAttributes];
 }
 
 @end

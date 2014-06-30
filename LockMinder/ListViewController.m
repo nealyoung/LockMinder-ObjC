@@ -31,7 +31,7 @@
     self.eventStore = [[EKEventStore alloc] init];
     [self importReminders];
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Generate"
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Preview"
                                                                              style:UIBarButtonItemStyleBordered
                                                                             target:self
                                                                             action:@selector(generateButtonPressed)];
@@ -41,6 +41,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
@@ -110,7 +114,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
-    
+    EKReminder *reminder = self.reminders[sourceIndexPath.row];
+    [self.reminders removeObjectAtIndex:sourceIndexPath.row];
+    [self.reminders insertObject:reminder atIndex:destinationIndexPath.row];
 }
 
 @end

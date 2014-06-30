@@ -7,8 +7,12 @@
 //
 
 #import "ImagePreviewViewController.h"
+#import "SVProgressHUD.h"
 
 @interface ImagePreviewViewController ()
+
+@property IBOutlet UILabel *clockLabel;
+@property IBOutlet UILabel *dateLabel;
 
 @property IBOutlet UIButton *cancelButton;
 @property IBOutlet UIButton *saveButton;
@@ -30,7 +34,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    // Do some hacky stuff to get rounded periods/colons in the clock
+    NSArray *clockFontAttributes = @[@{ UIFontFeatureTypeIdentifierKey: @(6),
+                                        UIFontFeatureSelectorIdentifierKey: @(1) },
+                                     @{ UIFontFeatureTypeIdentifierKey: @(17),
+                                        UIFontFeatureSelectorIdentifierKey: @(1) }];
+    UIFont *clockFont = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:90.0f];
+    UIFontDescriptor *clockFontDescriptor = [[clockFont fontDescriptor] fontDescriptorByAddingAttributes: @{ UIFontDescriptorFeatureSettingsAttribute: clockFontAttributes }];
+    self.clockLabel.font = [UIFont fontWithDescriptor:clockFontDescriptor size:0.0f];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,12 +54,22 @@
     return NO;
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 - (IBAction)cancelButtonPressed:(id)sender {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)saveButtonPressed:(id)sender {
-    
+    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeGradient];
+    UIImageWriteToSavedPhotosAlbum(self.imageView.image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+}
+
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo; {
+    [SVProgressHUD showSuccessWithStatus:@"Wallpaper Saved"];
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
