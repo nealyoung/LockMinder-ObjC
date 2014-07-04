@@ -41,13 +41,11 @@ static CGFloat const kCheckboxInset = 2.0f;
         // Draw the checkmark
         CGContextBeginPath(ctx);
         CGContextMoveToPoint(   ctx, CGRectGetWidth(rect) * 0.24f, CGRectGetHeight(rect) * 0.5f);
-        CGContextAddLineToPoint(ctx, CGRectGetWidth(rect) * 0.39f, CGRectGetHeight(rect) * 0.66f);
+        CGContextAddLineToPoint(ctx, CGRectGetWidth(rect) * 0.39f, CGRectGetHeight(rect) * 0.68f);
         CGContextAddLineToPoint(ctx, CGRectGetWidth(rect) * 0.72f, CGRectGetHeight(rect) * 0.29f);
         CGContextSetLineWidth(ctx, 2.0f);
         CGContextSetStrokeColorWithColor(ctx, [UIColor whiteColor].CGColor);
         CGContextStrokePath(ctx);
-    } else {
-        
     }
 }
 

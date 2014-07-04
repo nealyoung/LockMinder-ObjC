@@ -30,12 +30,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.eventStore = [[EKEventStore alloc] init];
-    [self importReminders];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Preview", nil)
                                                                               style:UIBarButtonItemStyleDone
                                                                              target:self
                                                                              action:@selector(generateButtonPressed)];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self importReminders];
 }
 
 - (void)generateButtonPressed {
