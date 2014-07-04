@@ -52,6 +52,7 @@
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     NSDictionary *navigationBarTitleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
     [[UINavigationBar appearance] setTitleTextAttributes:navigationBarTitleTextAttributes];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor redColor]];
 }
 
 @end

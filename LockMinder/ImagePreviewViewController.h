@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ImagePreviewViewController : UIViewController
+@interface ImagePreviewViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property IBOutlet UIImageView *imageView;
+@property (nonatomic) UIImage *backgroundImage;
+@property (nonatomic) NSArray *reminders;
 
 @end

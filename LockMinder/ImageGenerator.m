@@ -13,6 +13,7 @@
 
 static CGFloat const kClockHeight = 160.0f;
 static CGFloat const kSliderHeight = 90.0f;
+static CGFloat const kListHeaderHeight = 24.0f;
 static CGFloat const kListInset = 20.0f;
 static CGFloat const kListItemXInset = 15.0f;
 static CGFloat const kListItemHeight = 25.0f;
@@ -25,34 +26,45 @@ static CGFloat const kListItemHeight = 25.0f;
     
     [backgroundImage drawInRect:[UIScreen mainScreen].bounds];
     
-    CGFloat backgroundOverlayHeight = kListItemXInset * 2.0f + kListItemHeight * [reminders count];
+    CGFloat listBackgroundHeight = kListItemXInset * 2.0f + kListItemHeight * [reminders count];
     
     // Make sure the list background doesn't extend over the unlock slider
-    CGFloat maxOverlayHeight = screenBounds.size.height - kClockHeight - kSliderHeight;
-    if (backgroundOverlayHeight > maxOverlayHeight) {
-        backgroundOverlayHeight = maxOverlayHeight;
+    CGFloat maxListHeight = screenBounds.size.height - kClockHeight - kSliderHeight;
+    if (listBackgroundHeight > maxListHeight) {
+        listBackgroundHeight = maxListHeight;
     }
     
     // If the list is smaller than the space between the clock and unlock slider, center it vertically
-    CGFloat backgroundOverlayYOffset = (maxOverlayHeight - backgroundOverlayHeight) / 2.0f;
+    CGFloat listVerticalOffset = (maxListHeight - listBackgroundHeight) / 2.0f;
     
     // Determine the size of the overlay
-    CGRect reminderBackgroundRect = CGRectMake(kListInset,
-                                               kClockHeight + backgroundOverlayYOffset,
-                                               screenBounds.size.width - kListInset * 2.0f,
-                                               backgroundOverlayHeight);
-    UIBezierPath *reminderBackgroundPath = [UIBezierPath bezierPathWithRoundedRect:reminderBackgroundRect
-                                                                 byRoundingCorners:UIRectCornerAllCorners
-                                                                       cornerRadii:CGSizeMake(10.0f, 10.0f)];
-    CGContextAddPath(ctx, reminderBackgroundPath.CGPath);
+    CGRect listBackgroundRect = CGRectMake(kListInset,
+                                           kClockHeight + listVerticalOffset,
+                                           screenBounds.size.width - kListInset * 2.0f,
+                                           listBackgroundHeight);
+    UIBezierPath *listBackgroundPath = [UIBezierPath bezierPathWithRoundedRect:listBackgroundRect
+                                                             byRoundingCorners:UIRectCornerAllCorners
+                                                                   cornerRadii:CGSizeMake(10.0f, 10.0f)];
+    CGContextAddPath(ctx, listBackgroundPath.CGPath);
     CGContextSetFillColorWithColor(ctx, [[UIColor colorWithWhite:1.0f alpha:0.8f] CGColor]);
     CGContextFillPath(ctx);
     
+    CGRect listHeaderRect = CGRectMake(CGRectGetMinX(listBackgroundRect) + 15.0f,
+                                       CGRectGetMinY(listBackgroundRect) + 2.0f,
+                                       CGRectGetWidth(listBackgroundRect) - 30.0f,
+                                       kListHeaderHeight);
+    
+    // Center the header text
+    NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+    [style setAlignment:NSTextAlignmentCenter];
+    [@"Reminders" drawInRect:listHeaderRect withAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Medium" size:17.0f],
+                                                          NSParagraphStyleAttributeName: style}];
+    
     [reminders enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         EKReminder *reminder = (EKReminder *)obj;
-        CGRect listItemRect = CGRectMake(CGRectGetMinX(reminderBackgroundRect) + kListItemXInset,
-                                         CGRectGetMinY(reminderBackgroundRect) + kListItemXInset + (kListItemHeight * idx),
-                                         CGRectGetWidth(reminderBackgroundRect) - 30.0f,
+        CGRect listItemRect = CGRectMake(CGRectGetMinX(listBackgroundRect) + kListItemXInset,
+                                         CGRectGetMinY(listBackgroundRect) + kListHeaderHeight + (kListItemHeight * idx),
+                                         CGRectGetWidth(listBackgroundRect) - 30.0f,
                                          20.0f);
         [[NSString stringWithFormat:@"· %@", reminder.title] drawInRect:listItemRect
                                                          withAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Light" size:17.0f]}];

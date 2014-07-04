@@ -7,6 +7,7 @@
 //
 
 #import "ImagePreviewViewController.h"
+#import "ImageGenerator.h"
 #import "SVProgressHUD.h"
 
 @interface ImagePreviewViewController ()
@@ -17,6 +18,8 @@
 @property IBOutlet UIButton *cancelButton;
 @property IBOutlet UIButton *saveButton;
 
+- (IBAction)changeImageButtonPressed:(id)sender;
+
 - (IBAction)cancelButtonPressed:(id)sender;
 - (IBAction)saveButtonPressed:(id)sender;
 
@@ -24,8 +27,8 @@
 
 @implementation ImagePreviewViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+- (id)initWithReminders {
+    self = [super initWithNibName:nil bundle:nil];
     if (self) {
         // Custom initialization
     }
@@ -58,6 +61,29 @@
     return UIStatusBarStyleLightContent;
 }
 
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo; {
+    [SVProgressHUD showSuccessWithStatus:@"Wallpaper Saved"];
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)setReminders:(NSArray *)reminders {
+    _reminders = reminders;
+    self.imageView.image = [ImageGenerator wallpaperImageWithBackground:self.backgroundImage reminders:self.reminders];
+}
+
+- (void)setBackgroundImage:(UIImage *)backgroundImage {
+    _backgroundImage = backgroundImage;
+    self.imageView.image = [ImageGenerator wallpaperImageWithBackground:self.backgroundImage reminders:self.reminders];
+}
+
+#pragma mark - Actions
+
+- (IBAction)changeImageButtonPressed:(id)sender {
+    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+    imagePickerController.delegate = self;
+    [self presentViewController:imagePickerController animated:YES completion:nil];
+}
+
 - (IBAction)cancelButtonPressed:(id)sender {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
@@ -67,9 +93,11 @@
     UIImageWriteToSavedPhotosAlbum(self.imageView.image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
 }
 
-- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo; {
-    [SVProgressHUD showSuccessWithStatus:@"Wallpaper Saved"];
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+#pragma mark - UIImagePickerControllerDelegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    self.backgroundImage = info[UIImagePickerControllerOriginalImage];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

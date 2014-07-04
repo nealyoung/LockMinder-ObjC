@@ -74,13 +74,14 @@
         remindersToShow = self.reminders;
     }
     
-    UIImage *wallpaperImage = [ImageGenerator wallpaperImageWithBackground:[UIImage imageNamed:@"Wallpaper"] reminders:remindersToShow];
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ImagePreviewViewController *previewViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"ImagePreviewViewController"];
     
     // Access the view controller's view property to instantiate the image view
     [previewViewController view];
-    previewViewController.imageView.image = wallpaperImage;
+    
+    previewViewController.reminders = remindersToShow;
+    previewViewController.backgroundImage = [UIImage imageNamed:@"Wallpaper"];
     
     [self.navigationController presentViewController:previewViewController animated:YES completion:nil];
 }
