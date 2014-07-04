@@ -13,7 +13,7 @@
 
 static CGFloat const kClockHeight = 160.0f;
 static CGFloat const kSliderHeight = 90.0f;
-static CGFloat const kListHeaderHeight = 24.0f;
+//static CGFloat const kListHeaderHeight = 24.0f;
 static CGFloat const kListInset = 20.0f;
 static CGFloat const kListItemXInset = 15.0f;
 static CGFloat const kListItemHeight = 25.0f;
@@ -49,21 +49,21 @@ static CGFloat const kListItemHeight = 25.0f;
     CGContextSetFillColorWithColor(ctx, [[UIColor colorWithWhite:1.0f alpha:0.8f] CGColor]);
     CGContextFillPath(ctx);
     
-    CGRect listHeaderRect = CGRectMake(CGRectGetMinX(listBackgroundRect) + 15.0f,
-                                       CGRectGetMinY(listBackgroundRect) + 2.0f,
-                                       CGRectGetWidth(listBackgroundRect) - 30.0f,
-                                       kListHeaderHeight);
-    
-    // Center the header text
-    NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
-    [style setAlignment:NSTextAlignmentCenter];
-    [@"Reminders" drawInRect:listHeaderRect withAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Medium" size:17.0f],
-                                                          NSParagraphStyleAttributeName: style}];
+//    CGRect listHeaderRect = CGRectMake(CGRectGetMinX(listBackgroundRect) + 15.0f,
+//                                       CGRectGetMinY(listBackgroundRect) + 2.0f,
+//                                       CGRectGetWidth(listBackgroundRect) - 30.0f,
+//                                       kListHeaderHeight);
+//    
+//    // Center the header text
+//    NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+//    [style setAlignment:NSTextAlignmentCenter];
+//    [@"Reminders" drawInRect:listHeaderRect withAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Medium" size:17.0f],
+//                                                          NSParagraphStyleAttributeName: style}];
     
     [reminders enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         EKReminder *reminder = (EKReminder *)obj;
         CGRect listItemRect = CGRectMake(CGRectGetMinX(listBackgroundRect) + kListItemXInset,
-                                         CGRectGetMinY(listBackgroundRect) + kListHeaderHeight + (kListItemHeight * idx),
+                                         CGRectGetMinY(listBackgroundRect) + kListItemXInset + (kListItemHeight * idx),
                                          CGRectGetWidth(listBackgroundRect) - 30.0f,
                                          20.0f);
         [[NSString stringWithFormat:@"· %@", reminder.title] drawInRect:listItemRect

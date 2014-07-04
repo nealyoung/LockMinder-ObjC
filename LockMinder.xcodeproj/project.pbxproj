@@ -16,7 +16,7 @@
 		0E3CFD6C195FE99900CBF5DD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3CFD6B195FE99900CBF5DD /* Images.xcassets */; };
 		0EC176D91960B9EA0081A63E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EC176D71960B9EA0081A63E /* Info.plist */; };
 		0EC176DB1960B9F80081A63E /* LockMinderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC176D81960B9EA0081A63E /* LockMinderTests.m */; };
-		0EDBDC10196012BA00B2A87A /* CheckmarkButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EDBDC0F196012BA00B2A87A /* CheckmarkButton.m */; };
+		0EDBDC10196012BA00B2A87A /* SelectionIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EDBDC0F196012BA00B2A87A /* SelectionIndicatorView.m */; };
 		0EE3827B196097000051CB6B /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE3827A196097000051CB6B /* EventKit.framework */; };
 		0EE3827F19609CDA0051CB6B /* ReminderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE3827E19609CDA0051CB6B /* ReminderCell.m */; };
 		C7A3954AC86047F29510CFD4 /* libPods-LockMinder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1B95D6000E4D11927EFEA3 /* libPods-LockMinder.a */; };
@@ -49,8 +49,8 @@
 		0E3CFD71195FE99900CBF5DD /* LockMinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LockMinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EC176D71960B9EA0081A63E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = LockMinderTests/Info.plist; sourceTree = SOURCE_ROOT; };
 		0EC176D81960B9EA0081A63E /* LockMinderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LockMinderTests.m; path = LockMinderTests/LockMinderTests.m; sourceTree = SOURCE_ROOT; };
-		0EDBDC0E196012BA00B2A87A /* CheckmarkButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckmarkButton.h; sourceTree = "<group>"; };
-		0EDBDC0F196012BA00B2A87A /* CheckmarkButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckmarkButton.m; sourceTree = "<group>"; };
+		0EDBDC0E196012BA00B2A87A /* SelectionIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionIndicatorView.h; sourceTree = "<group>"; };
+		0EDBDC0F196012BA00B2A87A /* SelectionIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionIndicatorView.m; sourceTree = "<group>"; };
 		0EE3827A196097000051CB6B /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		0EE3827D19609CDA0051CB6B /* ReminderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReminderCell.h; sourceTree = "<group>"; };
 		0EE3827E19609CDA0051CB6B /* ReminderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderCell.m; sourceTree = "<group>"; };
@@ -147,8 +147,8 @@
 		0EAE7C091960E62700F063F1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0EDBDC0E196012BA00B2A87A /* CheckmarkButton.h */,
-				0EDBDC0F196012BA00B2A87A /* CheckmarkButton.m */,
+				0EDBDC0E196012BA00B2A87A /* SelectionIndicatorView.h */,
+				0EDBDC0F196012BA00B2A87A /* SelectionIndicatorView.m */,
 				0EE3827D19609CDA0051CB6B /* ReminderCell.h */,
 				0EE3827E19609CDA0051CB6B /* ReminderCell.m */,
 			);
@@ -302,7 +302,7 @@
 			files = (
 				0E3CFD67195FE99900CBF5DD /* ListViewController.m in Sources */,
 				0E3127D01960BC7C001A7238 /* ImagePreviewViewController.m in Sources */,
-				0EDBDC10196012BA00B2A87A /* CheckmarkButton.m in Sources */,
+				0EDBDC10196012BA00B2A87A /* SelectionIndicatorView.m in Sources */,
 				0E3CFD64195FE99900CBF5DD /* AppDelegate.m in Sources */,
 				0E3127D41960BD79001A7238 /* ImageGenerator.m in Sources */,
 				0E3CFD61195FE99900CBF5DD /* main.m in Sources */,

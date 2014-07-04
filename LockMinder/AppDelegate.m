@@ -47,12 +47,17 @@
 }
 
 - (void)customizeAppearance {
-    self.window.tintColor = [UIColor whiteColor];
+    UIColor *applicationColor = [UIColor colorWithRed:0.174 green:0.308 blue:0.584 alpha:1.000];
+    self.window.tintColor = applicationColor;
 
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    NSDictionary *barButtonItemTitleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
+    [[UIBarButtonItem appearance] setTitleTextAttributes:barButtonItemTitleTextAttributes forState:UIControlStateNormal];
+    
     NSDictionary *navigationBarTitleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
     [[UINavigationBar appearance] setTitleTextAttributes:navigationBarTitleTextAttributes];
-    [[UINavigationBar appearance] setBarTintColor:[UIColor redColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setBarTintColor:applicationColor];
 }
 
 @end

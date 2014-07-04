@@ -1,14 +1,14 @@
 //
-//  CheckmarkButton.m
+//  SelectionIndicatorView.m
 //  LockMinder
 //
 //  Created by Nealon Young on 6/29/14.
 //  Copyright (c) 2014 Nealon Young. All rights reserved.
 //
 
-#import "CheckmarkButton.h"
+#import "SelectionIndicatorView.h"
 
-@interface CheckmarkButton ()
+@interface SelectionIndicatorView ()
 
 @property UIImageView *imageView;
 
@@ -16,7 +16,7 @@
 
 static CGFloat const kCheckboxInset = 2.0f;
 
-@implementation CheckmarkButton
+@implementation SelectionIndicatorView
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];

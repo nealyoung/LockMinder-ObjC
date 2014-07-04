@@ -46,6 +46,10 @@
     UIFont *clockFont = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:90.0f];
     UIFontDescriptor *clockFontDescriptor = [[clockFont fontDescriptor] fontDescriptorByAddingAttributes: @{ UIFontDescriptorFeatureSettingsAttribute: clockFontAttributes }];
     self.clockLabel.font = [UIFont fontWithDescriptor:clockFontDescriptor size:0.0f];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"H:mm"];
+    self.clockLabel.text = [formatter stringFromDate:[NSDate date]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -98,6 +102,12 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     self.backgroundImage = info[UIImagePickerControllerOriginalImage];
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - UINavigationControllerDelegate
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 }
 
 @end

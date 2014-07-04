@@ -1,5 +1,5 @@
 //
-//  CheckmarkButton.h
+//  SelectionIndicatorView.h
 //  LockMinder
 //
 //  Created by Nealon Young on 6/29/14.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CheckmarkButton : UIView
+@interface SelectionIndicatorView : UIView
 
 @property (nonatomic) BOOL selected;
 

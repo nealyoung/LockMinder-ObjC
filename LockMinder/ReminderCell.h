@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CheckmarkButton.h"
+#import "SelectionIndicatorView.h"
 
 @interface ReminderCell : UITableViewCell
 
-@property IBOutlet CheckmarkButton *checkmarkButton;
+@property IBOutlet SelectionIndicatorView *checkmarkButton;
 @property IBOutlet UILabel *reminderLabel;
 
 @end

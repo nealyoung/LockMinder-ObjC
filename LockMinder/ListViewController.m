@@ -26,17 +26,16 @@
 @end
 
 @implementation ListViewController
-            
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.eventStore = [[EKEventStore alloc] init];
     [self importReminders];
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Preview"
-                                                                             style:UIBarButtonItemStyleBordered
-                                                                            target:self
-                                                                            action:@selector(generateButtonPressed)];
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Preview"
+                                                                              style:UIBarButtonItemStyleDone
+                                                                             target:self
+                                                                             action:@selector(generateButtonPressed)];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,11 +45,6 @@
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
-}
-
-- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
-    [super setEditing:editing animated:animated];
-    self.tableView.editing = editing;
 }
 
 - (void)generateButtonPressed {
