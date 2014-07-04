@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Nealon Young. All rights reserved.
 //
 
+#import <AssetsLibrary/AssetsLibrary.h>
 #import "ImagePreviewViewController.h"
 #import "ImageGenerator.h"
 #import "SVProgressHUD.h"
@@ -18,12 +19,15 @@
 @property IBOutlet UIButton *cancelButton;
 @property IBOutlet UIButton *saveButton;
 
-- (IBAction)changeImageButtonPressed:(id)sender;
+- (void)imageDidFinishSavingWithError:(NSError *)error;
 
+- (IBAction)changeImageButtonPressed:(id)sender;
 - (IBAction)cancelButtonPressed:(id)sender;
 - (IBAction)saveButtonPressed:(id)sender;
 
 @end
+
+static NSString * const kSavedPhotosAlbumName = @"LockMinder Wallpapers";
 
 @implementation ImagePreviewViewController
 
@@ -60,17 +64,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (BOOL)prefersStatusBarHidden {
-    return NO;
-}
-
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
-}
-
-- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo; {
-    [SVProgressHUD showSuccessWithStatus:@"Wallpaper Saved"];
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+- (void)imageDidFinishSavingWithError:(NSError *)error {
+    if (error) {
+        [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Error saving wallpaper", nil)];
+    } else {
+        [SVProgressHUD showSuccessWithStatus:@"Wallpaper saved"];
+        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 - (void)setReminders:(NSArray *)reminders {
@@ -97,7 +97,41 @@
 
 - (IBAction)saveButtonPressed:(id)sender {
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeGradient];
-    UIImageWriteToSavedPhotosAlbum(self.imageView.image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+    
+    ALAssetsLibrary *assetsLibrary = [[ALAssetsLibrary alloc] init];
+    
+    [assetsLibrary writeImageToSavedPhotosAlbum:self.imageView.image.CGImage
+                                    orientation:(ALAssetOrientation)self.imageView.image.imageOrientation
+                                completionBlock:^(NSURL *assetURL, NSError *error) {
+                                    [assetsLibrary assetForURL:assetURL
+                                                   resultBlock:^(ALAsset *asset) {
+                                                       __block BOOL albumCreated = NO;
+                                                       [assetsLibrary enumerateGroupsWithTypes:ALAssetsGroupAlbum
+                                                                                    usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
+                                                                                        if ([[group valueForProperty:ALAssetsGroupPropertyName] isEqualToString:kSavedPhotosAlbumName]) {
+                                                                                            [group addAsset:asset];
+                                                                                            albumCreated = YES;
+                                                                                            *stop = YES;
+                                                                                            [self imageDidFinishSavingWithError:error];
+                                                                                        }
+                                                                                        
+                                                                                        // On the last iteration (when group is nil), we check if the album has been created
+                                                                                        if (!group && !albumCreated) {
+                                                                                            [assetsLibrary addAssetsGroupAlbumWithName:kSavedPhotosAlbumName
+                                                                                                                           resultBlock:^(ALAssetsGroup *group) {
+                                                                                                                               [group addAsset:asset];
+                                                                                                                               [self imageDidFinishSavingWithError:nil];
+                                                                                                                           } failureBlock:^(NSError *error) {
+                                                                                                                               [self imageDidFinishSavingWithError:error];
+                                                                                                                           }];
+                                                                                        }
+                                                                                    } failureBlock:^(NSError *error) {
+                                                                                        [self imageDidFinishSavingWithError:error];
+                                                                                    }];
+                                                   } failureBlock:^(NSError *error) {
+                                                       [self imageDidFinishSavingWithError:error];
+                                                   }];
+                                }];
 }
 
 #pragma mark - UIImagePickerControllerDelegate

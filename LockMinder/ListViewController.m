@@ -38,10 +38,6 @@
                                                                              action:@selector(generateButtonPressed)];
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
-}
-
 - (void)generateButtonPressed {
     if (![self.reminders count]) {
         [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"You need at least one reminder", nil)];

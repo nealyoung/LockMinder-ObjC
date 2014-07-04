@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E194B5A19675C1C00040713 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E194B5919675C1C00040713 /* AssetsLibrary.framework */; };
 		0E3127D01960BC7C001A7238 /* ImagePreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3127CE1960BC7C001A7238 /* ImagePreviewViewController.m */; };
 		0E3127D41960BD79001A7238 /* ImageGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3127D31960BD79001A7238 /* ImageGenerator.m */; };
 		0E3CFD61195FE99900CBF5DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3CFD60195FE99900CBF5DD /* main.m */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E194B5919675C1C00040713 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		0E3127CD1960BC7C001A7238 /* ImagePreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagePreviewViewController.h; sourceTree = "<group>"; };
 		0E3127CE1960BC7C001A7238 /* ImagePreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagePreviewViewController.m; sourceTree = "<group>"; };
 		0E3127D21960BD79001A7238 /* ImageGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageGenerator.h; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E194B5A19675C1C00040713 /* AssetsLibrary.framework in Frameworks */,
 				0EE3827B196097000051CB6B /* EventKit.framework in Frameworks */,
 				C7A3954AC86047F29510CFD4 /* libPods-LockMinder.a in Frameworks */,
 			);
@@ -182,6 +185,7 @@
 		0EE3827C1960975E0051CB6B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0E194B5919675C1C00040713 /* AssetsLibrary.framework */,
 				0EE3827A196097000051CB6B /* EventKit.framework */,
 				FA1B95D6000E4D11927EFEA3 /* libPods-LockMinder.a */,
 			);
