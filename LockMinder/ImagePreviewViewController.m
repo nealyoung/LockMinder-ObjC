@@ -48,7 +48,7 @@
     self.clockLabel.font = [UIFont fontWithDescriptor:clockFontDescriptor size:0.0f];
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"H:mm"];
+    [formatter setDateFormat:@"h:mm"];
     self.clockLabel.text = [formatter stringFromDate:[NSDate date]];
     
     [formatter setDateFormat:@"EEEE, MMMM d"];
