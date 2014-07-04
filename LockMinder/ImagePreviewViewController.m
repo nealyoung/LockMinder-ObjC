@@ -16,6 +16,7 @@
 @property IBOutlet UILabel *clockLabel;
 @property IBOutlet UILabel *dateLabel;
 
+@property IBOutlet UIButton *changeBackgroundButton;
 @property IBOutlet UIButton *cancelButton;
 @property IBOutlet UIButton *saveButton;
 
@@ -31,16 +32,12 @@ static NSString * const kSavedPhotosAlbumName = @"LockMinder Wallpapers";
 
 @implementation ImagePreviewViewController
 
-- (id)initWithReminders {
-    self = [super initWithNibName:nil bundle:nil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.changeBackgroundButton.titleLabel.font = [UIFont applicationFontOfSize:16.0f];
+    self.cancelButton.titleLabel.font = [UIFont applicationFontOfSize:18.0f];
+    self.saveButton.titleLabel.font = [UIFont applicationFontOfSize:18.0f];
     
     // Do some hacky stuff to get rounded periods/colons in the clock
     NSArray *clockFontAttributes = @[@{ UIFontFeatureTypeIdentifierKey: @(6),
@@ -57,11 +54,6 @@ static NSString * const kSavedPhotosAlbumName = @"LockMinder Wallpapers";
     
     [formatter setDateFormat:@"EEEE, MMMM d"];
     self.dateLabel.text = [formatter stringFromDate:[NSDate date]];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)imageDidFinishSavingWithError:(NSError *)error {

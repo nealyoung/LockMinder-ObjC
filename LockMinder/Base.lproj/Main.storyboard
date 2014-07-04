@@ -51,8 +51,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="checkmarkButton" destination="Ywl-0n-Ona" id="L3o-of-gT6"/>
                                             <outlet property="reminderLabel" destination="y3W-Eq-eHa" id="Qlb-k5-u8R"/>
+                                            <outlet property="selectionIndicatorView" destination="Ywl-0n-Ona" id="6Dx-E1-iBB"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -210,6 +210,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="cancelButton" destination="psa-Sg-Sm4" id="ZTz-yL-3Zm"/>
+                        <outlet property="changeBackgroundButton" destination="cU0-V7-wUu" id="aWy-Ed-hzJ"/>
                         <outlet property="clockLabel" destination="mhc-08-JdU" id="bVW-EY-t5g"/>
                         <outlet property="dateLabel" destination="nDt-9e-J1Q" id="gv4-mc-X2V"/>
                         <outlet property="imageView" destination="b4C-Y4-O0u" id="lBY-MD-5ta"/>

@@ -32,7 +32,6 @@ static CGFloat const kCheckboxInset = 2.0f;
     CGContextStrokePath(ctx);
     
     if (self.selected) {
-        
         CGContextBeginPath(ctx);
         UIBezierPath *circlePath = [UIBezierPath bezierPathWithOvalInRect:CGRectInset(rect, kCheckboxInset * 2.0f, kCheckboxInset * 2.0f)];
         CGContextAddPath(ctx, circlePath.CGPath);
@@ -40,13 +39,13 @@ static CGFloat const kCheckboxInset = 2.0f;
         CGContextFillPath(ctx);
 
         // Draw the checkmark
-//        CGContextBeginPath(ctx);
-//        CGContextMoveToPoint(ctx, CGRectGetWidth(rect) * 0.2f, CGRectGetMidY(rect));
-//        CGContextAddLineToPoint(ctx, CGRectGetWidth(rect) * 0.37f, CGRectGetMidY(rect) * 1.32f);
-//        CGContextAddLineToPoint(ctx, CGRectGetWidth(rect) * 0.72f, CGRectGetHeight(rect) * 0.29f);
-//        CGContextSetLineWidth(ctx, 2.0f);
-//        CGContextSetStrokeColorWithColor(ctx, [UIColor whiteColor].CGColor);
-//        CGContextStrokePath(ctx);
+        CGContextBeginPath(ctx);
+        CGContextMoveToPoint(   ctx, CGRectGetWidth(rect) * 0.24f, CGRectGetHeight(rect) * 0.5f);
+        CGContextAddLineToPoint(ctx, CGRectGetWidth(rect) * 0.39f, CGRectGetHeight(rect) * 0.66f);
+        CGContextAddLineToPoint(ctx, CGRectGetWidth(rect) * 0.72f, CGRectGetHeight(rect) * 0.29f);
+        CGContextSetLineWidth(ctx, 2.0f);
+        CGContextSetStrokeColorWithColor(ctx, [UIColor whiteColor].CGColor);
+        CGContextStrokePath(ctx);
     } else {
         
     }

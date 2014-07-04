@@ -12,7 +12,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-    self.checkmarkButton.selected = selected;
+    self.selectionIndicatorView.selected = selected;
 }
 
 @end

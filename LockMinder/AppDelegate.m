@@ -36,7 +36,7 @@
     [[UINavigationBar appearance] setTitleTextAttributes:navigationBarTitleTextAttributes];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setBarTintColor:applicationColor];
-    
+
     [SVProgressHUD setFont:[UIFont semiboldApplicationFontOfSize:16.0f]];
 }
 

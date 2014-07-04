@@ -11,7 +11,7 @@
 
 @interface ReminderCell : UITableViewCell
 
-@property IBOutlet SelectionIndicatorView *checkmarkButton;
+@property IBOutlet SelectionIndicatorView *selectionIndicatorView;
 @property IBOutlet UILabel *reminderLabel;
 
 @end
