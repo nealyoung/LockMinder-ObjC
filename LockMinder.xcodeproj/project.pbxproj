@@ -14,6 +14,10 @@
 		0E3CFD67195FE99900CBF5DD /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3CFD66195FE99900CBF5DD /* ListViewController.m */; };
 		0E3CFD6A195FE99900CBF5DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E3CFD68195FE99900CBF5DD /* Main.storyboard */; };
 		0E3CFD6C195FE99900CBF5DD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3CFD6B195FE99900CBF5DD /* Images.xcassets */; };
+		0E96A5481966AECF008E58DC /* SourceSansPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0E96A5451966AECF008E58DC /* SourceSansPro-Bold.otf */; };
+		0E96A5491966AECF008E58DC /* SourceSansPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0E96A5461966AECF008E58DC /* SourceSansPro-Regular.otf */; };
+		0E96A54A1966AECF008E58DC /* SourceSansPro-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0E96A5471966AECF008E58DC /* SourceSansPro-Semibold.otf */; };
+		0E96A54D1966AF48008E58DC /* UIFont+Application.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E96A54C1966AF48008E58DC /* UIFont+Application.m */; };
 		0EC176D91960B9EA0081A63E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EC176D71960B9EA0081A63E /* Info.plist */; };
 		0EC176DB1960B9F80081A63E /* LockMinderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC176D81960B9EA0081A63E /* LockMinderTests.m */; };
 		0EDBDC10196012BA00B2A87A /* SelectionIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EDBDC0F196012BA00B2A87A /* SelectionIndicatorView.m */; };
@@ -47,6 +51,12 @@
 		0E3CFD69195FE99900CBF5DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0E3CFD6B195FE99900CBF5DD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0E3CFD71195FE99900CBF5DD /* LockMinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LockMinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E52861219673721007F8838 /* LockMinder-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LockMinder-Prefix.pch"; sourceTree = "<group>"; };
+		0E96A5451966AECF008E58DC /* SourceSansPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.otf"; sourceTree = "<group>"; };
+		0E96A5461966AECF008E58DC /* SourceSansPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.otf"; sourceTree = "<group>"; };
+		0E96A5471966AECF008E58DC /* SourceSansPro-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Semibold.otf"; sourceTree = "<group>"; };
+		0E96A54B1966AF48008E58DC /* UIFont+Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Application.h"; sourceTree = "<group>"; };
+		0E96A54C1966AF48008E58DC /* UIFont+Application.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Application.m"; sourceTree = "<group>"; };
 		0EC176D71960B9EA0081A63E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = LockMinderTests/Info.plist; sourceTree = SOURCE_ROOT; };
 		0EC176D81960B9EA0081A63E /* LockMinderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LockMinderTests.m; path = LockMinderTests/LockMinderTests.m; sourceTree = SOURCE_ROOT; };
 		0EDBDC0E196012BA00B2A87A /* SelectionIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionIndicatorView.h; sourceTree = "<group>"; };
@@ -116,6 +126,8 @@
 				0E3CFD63195FE99900CBF5DD /* AppDelegate.m */,
 				0E3127D21960BD79001A7238 /* ImageGenerator.h */,
 				0E3127D31960BD79001A7238 /* ImageGenerator.m */,
+				0E96A54B1966AF48008E58DC /* UIFont+Application.h */,
+				0E96A54C1966AF48008E58DC /* UIFont+Application.m */,
 				0E3127D51960C3E0001A7238 /* View Controllers */,
 				0EAE7C091960E62700F063F1 /* Views */,
 				0E3CFD68195FE99900CBF5DD /* Main.storyboard */,
@@ -128,6 +140,8 @@
 		0E3CFD5E195FE99900CBF5DD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0E52861219673721007F8838 /* LockMinder-Prefix.pch */,
+				0E96A5441966AECF008E58DC /* Fonts */,
 				0E3CFD5F195FE99900CBF5DD /* Info.plist */,
 				0E3CFD60195FE99900CBF5DD /* main.m */,
 			);
@@ -142,6 +156,16 @@
 			);
 			name = LockMinderTests;
 			path = LockToDoTests;
+			sourceTree = "<group>";
+		};
+		0E96A5441966AECF008E58DC /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0E96A5451966AECF008E58DC /* SourceSansPro-Bold.otf */,
+				0E96A5461966AECF008E58DC /* SourceSansPro-Regular.otf */,
+				0E96A5471966AECF008E58DC /* SourceSansPro-Semibold.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		0EAE7C091960E62700F063F1 /* Views */ = {
@@ -247,8 +271,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E96A5491966AECF008E58DC /* SourceSansPro-Regular.otf in Resources */,
 				0E3CFD6A195FE99900CBF5DD /* Main.storyboard in Resources */,
 				0E3CFD6C195FE99900CBF5DD /* Images.xcassets in Resources */,
+				0E96A5481966AECF008E58DC /* SourceSansPro-Bold.otf in Resources */,
+				0E96A54A1966AECF008E58DC /* SourceSansPro-Semibold.otf in Resources */,
 				0EC176D91960B9EA0081A63E /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,6 +330,7 @@
 				0E3CFD67195FE99900CBF5DD /* ListViewController.m in Sources */,
 				0E3127D01960BC7C001A7238 /* ImagePreviewViewController.m in Sources */,
 				0EDBDC10196012BA00B2A87A /* SelectionIndicatorView.m in Sources */,
+				0E96A54D1966AF48008E58DC /* UIFont+Application.m in Sources */,
 				0E3CFD64195FE99900CBF5DD /* AppDelegate.m in Sources */,
 				0E3127D41960BD79001A7238 /* ImageGenerator.m in Sources */,
 				0E3CFD61195FE99900CBF5DD /* main.m in Sources */,
@@ -363,6 +391,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "LockMinder/LockMinder-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -403,6 +432,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREFIX_HEADER = "LockMinder/LockMinder-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

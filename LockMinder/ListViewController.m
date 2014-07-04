@@ -32,15 +32,10 @@
     self.eventStore = [[EKEventStore alloc] init];
     [self importReminders];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Preview"
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Preview", nil)
                                                                               style:UIBarButtonItemStyleDone
                                                                              target:self
                                                                              action:@selector(generateButtonPressed)];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -83,7 +78,7 @@
 - (void)importReminders {
     [self.eventStore requestAccessToEntityType:EKEntityTypeReminder completion:^(BOOL granted, NSError *error) {
         if (!granted) {
-            NSLog(@"Permission refused");
+            [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"You must grant access to reminders to use LockMinder", nil)];
             return;
         }
         
@@ -93,12 +88,6 @@
                                                                                                              calendars:@[defaultReminderCalendar]];
         
         [self.eventStore fetchRemindersMatchingPredicate:completedRemindersPredicate completion:^(NSArray *reminders) {
-            for (EKReminder *reminder in reminders) {
-                if (reminder.completed) {
-                    NSLog(@"%@", reminder.title);
-                }
-            }
-            
             self.reminders = [reminders mutableCopy];
             
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -111,11 +100,20 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (![self.reminders count]) {
+        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        tableView.backgroundColor = [UIColor colorWithWhite:0.92f alpha:1.0f];
+    } else {
+        tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        tableView.backgroundColor = [UIColor whiteColor];
+    }
+    
     return [self.reminders count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ReminderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ReminderCell" forIndexPath:indexPath];
+    cell.reminderLabel.font = [UIFont applicationFontOfSize:18.0f];
     EKReminder *reminder = self.reminders[indexPath.row];
     cell.reminderLabel.text = reminder.title;
     return cell;
@@ -129,6 +127,22 @@
     EKReminder *reminder = self.reminders[sourceIndexPath.row];
     [self.reminders removeObjectAtIndex:sourceIndexPath.row];
     [self.reminders insertObject:reminder atIndex:destinationIndexPath.row];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if ([self.reminders count]) {
+        return 0.0f;
+    } else {
+        return 120.0f;
+    }
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UILabel *headerView = [[UILabel alloc] initWithFrame:CGRectZero];
+    headerView.font = [UIFont applicationFontOfSize:18.0f];
+    headerView.textAlignment = NSTextAlignmentCenter;
+    headerView.text = NSLocalizedString(@"No reminders", nil);
+    return headerView;
 }
 
 @end

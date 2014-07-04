@@ -50,6 +50,9 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"H:mm"];
     self.clockLabel.text = [formatter stringFromDate:[NSDate date]];
+    
+    [formatter setDateFormat:@"EEEE, MMMM d"];
+    self.dateLabel.text = [formatter stringFromDate:[NSDate date]];
 }
 
 - (void)didReceiveMemoryWarning {

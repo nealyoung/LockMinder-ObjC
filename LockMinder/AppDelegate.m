@@ -47,17 +47,21 @@
 }
 
 - (void)customizeAppearance {
-    UIColor *applicationColor = [UIColor colorWithRed:0.174 green:0.308 blue:0.584 alpha:1.000];
+    UIColor *applicationColor = [UIColor colorWithRed:0.267 green:0.178 blue:0.891 alpha:1.000];
     self.window.tintColor = applicationColor;
 
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-    NSDictionary *barButtonItemTitleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
+    NSDictionary *barButtonItemTitleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor],
+                                                       NSFontAttributeName: [UIFont semiboldApplicationFontOfSize:16.0f]};
     [[UIBarButtonItem appearance] setTitleTextAttributes:barButtonItemTitleTextAttributes forState:UIControlStateNormal];
     
-    NSDictionary *navigationBarTitleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
+    NSDictionary *navigationBarTitleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor],
+                                                       NSFontAttributeName: [UIFont semiboldApplicationFontOfSize:19.0f]};
     [[UINavigationBar appearance] setTitleTextAttributes:navigationBarTitleTextAttributes];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setBarTintColor:applicationColor];
+    
+    [SVProgressHUD setFont:[UIFont applicationFontOfSize:16.0f]];
 }
 
 @end
