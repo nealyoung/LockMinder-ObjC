@@ -23,9 +23,9 @@
 }
 
 - (void)customizeAppearance {
-    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
     
-    UIColor *applicationColor = [UIColor colorWithRed:0.380 green:0.201 blue:0.891 alpha:1.000];
+    UIColor *applicationColor = [UIColor colorWithRed:0.529 green:0.102 blue:1.000 alpha:1.000];
     self.window.tintColor = applicationColor;
 
     NSDictionary *barButtonItemTitleTextAttributes = @{ NSFontAttributeName: [UIFont semiboldApplicationFontOfSize:16.0f] };

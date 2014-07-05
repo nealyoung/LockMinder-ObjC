@@ -20,7 +20,6 @@
 @property NSMutableArray *selectedReminders;
 @property IBOutlet UITableView *tableView;
 
-- (void)generateButtonPressed;
 - (void)importReminders;
 
 @end
@@ -30,49 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.eventStore = [[EKEventStore alloc] init];
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Preview", nil)
-                                                                              style:UIBarButtonItemStyleDone
-                                                                             target:self
-                                                                             action:@selector(generateButtonPressed)];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
     [self importReminders];
-}
-
-- (void)generateButtonPressed {
-    if (![self.reminders count]) {
-        [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"You need at least one reminder", nil)];
-        return;
-    }
-
-    NSMutableArray *remindersToShow;
-    
-    // If the user has not selected any reminders, use all incomplete reminders
-    // Otherwise, use only the selected reminders
-    NSArray *selectedIndexPaths = [self.tableView indexPathsForSelectedRows];
-    if ([selectedIndexPaths count]) {
-        remindersToShow = [NSMutableArray array];
-        
-        for (NSIndexPath *indexPath in selectedIndexPaths) {
-            [remindersToShow addObject:self.reminders[indexPath.row]];
-        }
-    } else {
-        remindersToShow = self.reminders;
-    }
-    
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    ImagePreviewViewController *previewViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"ImagePreviewViewController"];
-    
-    // Access the view controller's view property to instantiate the image view
-    [previewViewController view];
-    
-    previewViewController.reminders = remindersToShow;
-    previewViewController.backgroundImage = [UIImage imageNamed:@"Wallpaper"];
-    
-    [self.navigationController presentViewController:previewViewController animated:YES completion:nil];
 }
 
 - (void)importReminders {
@@ -95,6 +52,40 @@
             });
         }];
     }];
+}
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    if (![self.reminders count]) {
+        [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"You need at least one reminder", nil)];
+        return NO;
+    }
+    
+    return YES;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSMutableArray *remindersToShow;
+    
+    // If the user has not selected any reminders, use all incomplete reminders
+    // Otherwise, use only the selected reminders
+    NSArray *selectedIndexPaths = [self.tableView indexPathsForSelectedRows];
+    if ([selectedIndexPaths count]) {
+        remindersToShow = [NSMutableArray array];
+        
+        for (NSIndexPath *indexPath in selectedIndexPaths) {
+            [remindersToShow addObject:self.reminders[indexPath.row]];
+        }
+    } else {
+        remindersToShow = self.reminders;
+    }
+    
+    ImagePreviewViewController *previewViewController = (ImagePreviewViewController *)segue.destinationViewController;
+    
+    // Access the view controller's view property to instantiate the image view
+    [previewViewController view];
+    
+    previewViewController.reminders = remindersToShow;
+    previewViewController.backgroundImage = [UIImage imageNamed:@"Wallpaper"];
 }
 
 #pragma mark - UITableViewDataSource
