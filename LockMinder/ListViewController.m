@@ -122,7 +122,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if ([self.reminders count]) {
-        return 0.0f;
+        return 44.0f;
     } else {
         return 120.0f;
     }
@@ -130,9 +130,16 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UILabel *headerView = [[UILabel alloc] initWithFrame:CGRectZero];
-    headerView.font = [UIFont applicationFontOfSize:18.0f];
+    headerView.backgroundColor = [UIColor colorWithWhite:0.92f alpha:1.0f];
+    headerView.font = [UIFont applicationFontOfSize:15.0f];
     headerView.textAlignment = NSTextAlignmentCenter;
-    headerView.text = NSLocalizedString(@"No reminders", nil);
+    
+    if ([self.reminders count]) {
+        headerView.text = NSLocalizedString(@"Select reminders to appear on your wallpaper", nil);
+    } else {
+        headerView.text = NSLocalizedString(@"No reminders", nil);
+    }
+    
     return headerView;
 }
 

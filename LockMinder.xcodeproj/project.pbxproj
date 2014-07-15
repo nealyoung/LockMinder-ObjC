@@ -91,6 +91,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E0C027C1975EE87009FF032 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				0E96A54B1966AF48008E58DC /* UIFont+Application.h */,
+				0E96A54C1966AF48008E58DC /* UIFont+Application.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		0E3127D51960C3E0001A7238 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,8 +138,7 @@
 				0E3CFD63195FE99900CBF5DD /* AppDelegate.m */,
 				0E3127D21960BD79001A7238 /* ImageGenerator.h */,
 				0E3127D31960BD79001A7238 /* ImageGenerator.m */,
-				0E96A54B1966AF48008E58DC /* UIFont+Application.h */,
-				0E96A54C1966AF48008E58DC /* UIFont+Application.m */,
+				0E0C027C1975EE87009FF032 /* Categories */,
 				0E3127D51960C3E0001A7238 /* View Controllers */,
 				0EAE7C091960E62700F063F1 /* Views */,
 				0E3CFD68195FE99900CBF5DD /* Main.storyboard */,
