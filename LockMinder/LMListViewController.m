@@ -1,5 +1,5 @@
 //
-//  ViewController.m
+//  LMListViewController.m
 //  LockMinder
 //
 //  Created by Nealon Young on 6/28/14.
@@ -7,13 +7,13 @@
 //
 
 #import <EventKit/EventKit.h>
-#import "ListViewController.h"
-#import "ImageGenerator.h"
-#import "ImagePreviewViewController.h"
+#import "LMListViewController.h"
+#import "LMImageGenerator.h"
+#import "LMImagePreviewViewController.h"
 #import "ReminderCell.h"
 #import "SVProgressHUD.h"
 
-@interface ListViewController ()
+@interface LMListViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property EKEventStore *eventStore;
 @property NSMutableArray *reminders;
@@ -24,7 +24,7 @@
 
 @end
 
-@implementation ListViewController
+@implementation LMListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -56,7 +56,7 @@
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
     if (![self.reminders count]) {
-        [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"You need at least one reminder", nil)];
+        [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Select at least one reminder", nil)];
         return NO;
     }
     
@@ -79,7 +79,7 @@
         remindersToShow = self.reminders;
     }
     
-    ImagePreviewViewController *previewViewController = (ImagePreviewViewController *)segue.destinationViewController;
+    LMImagePreviewViewController *previewViewController = (LMImagePreviewViewController *)segue.destinationViewController;
     
     // Access the view controller's view property to instantiate the image view
     [previewViewController view];

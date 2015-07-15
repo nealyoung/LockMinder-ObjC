@@ -1,5 +1,5 @@
 //
-//  ImagePreviewViewController.h
+//  LMImagePreviewViewController.h
 //  LockMinder
 //
 //  Created by Nealon Young on 6/29/14.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ImagePreviewViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface LMImagePreviewViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property IBOutlet UIImageView *imageView;
 @property (nonatomic) UIImage *backgroundImage;

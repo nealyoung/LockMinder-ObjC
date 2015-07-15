@@ -1,5 +1,5 @@
 //
-//  ImagePreviewViewController.m
+//  LMImagePreviewViewController.m
 //  LockMinder
 //
 //  Created by Nealon Young on 6/29/14.
@@ -7,11 +7,11 @@
 //
 
 #import <AssetsLibrary/AssetsLibrary.h>
-#import "ImagePreviewViewController.h"
-#import "ImageGenerator.h"
+#import "LMImagePreviewViewController.h"
+#import "LMImageGenerator.h"
 #import "SVProgressHUD.h"
 
-@interface ImagePreviewViewController ()
+@interface LMImagePreviewViewController ()
 
 @property IBOutlet UILabel *clockLabel;
 @property IBOutlet UILabel *dateLabel;
@@ -30,7 +30,7 @@
 
 static NSString * const kSavedPhotosAlbumName = @"LockMinder Wallpapers";
 
-@implementation ImagePreviewViewController
+@implementation LMImagePreviewViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -67,12 +67,12 @@ static NSString * const kSavedPhotosAlbumName = @"LockMinder Wallpapers";
 
 - (void)setReminders:(NSArray *)reminders {
     _reminders = reminders;
-    self.imageView.image = [ImageGenerator wallpaperImageWithBackground:self.backgroundImage reminders:self.reminders];
+    self.imageView.image = [LMImageGenerator wallpaperImageWithBackground:self.backgroundImage reminders:self.reminders];
 }
 
 - (void)setBackgroundImage:(UIImage *)backgroundImage {
     _backgroundImage = backgroundImage;
-    self.imageView.image = [ImageGenerator wallpaperImageWithBackground:self.backgroundImage reminders:self.reminders];
+    self.imageView.image = [LMImageGenerator wallpaperImageWithBackground:self.backgroundImage reminders:self.reminders];
 }
 
 #pragma mark - Actions

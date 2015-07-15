@@ -1,5 +1,5 @@
 //
-//  ImageGenerator.m
+//  LMImageGenerator.m
 //  LockMinder
 //
 //  Created by Nealon Young on 6/29/14.
@@ -7,7 +7,7 @@
 //
 
 #import <EventKit/EventKit.h>
-#import "ImageGenerator.h"
+#import "LMImageGenerator.h"
 
 static CGFloat const kClockHeight = 160.0f;
 static CGFloat const kSliderHeight = 90.0f;
@@ -16,7 +16,7 @@ static CGFloat const kListItemXInset = 15.0f;
 static CGFloat const kListItemPadding = 2.0f;
 static CGFloat const kItemBulletWidth = 5.0f;
 
-@implementation ImageGenerator
+@implementation LMImageGenerator
 
 + (UIImage *)wallpaperImageWithBackground:(UIImage *)backgroundImage reminders:(NSArray *)reminders {
     CGRect screenBounds = [UIScreen mainScreen].bounds;
@@ -24,7 +24,20 @@ static CGFloat const kItemBulletWidth = 5.0f;
     UIGraphicsBeginImageContextWithOptions(screenBounds.size, YES, scale);
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     
-    [backgroundImage drawInRect:[UIScreen mainScreen].bounds];
+    CGFloat horizontalImageScale = screenBounds.size.width / backgroundImage.size.width,
+            verticalImageScale   = screenBounds.size.height / backgroundImage.size.height;
+    
+    CGRect imageRect;
+
+    if (horizontalImageScale > verticalImageScale) {
+        imageRect = CGRectMake(0.0f, 0.0f, backgroundImage.size.width * horizontalImageScale, backgroundImage.size.height * horizontalImageScale);
+    } else {
+        imageRect = CGRectMake(0.0f, 0.0f, backgroundImage.size.width * verticalImageScale, backgroundImage.size.height * verticalImageScale);
+    }
+    
+//    [backgroundImage drawInRect:imageRect];
+    
+    [self drawGradientBackgroundInContext:ctx withStartColor:[UIColor redColor] endColor:[UIColor blueColor]];
     
     CGFloat listBackgroundHeight = kListItemXInset * 2.0f;
 
@@ -96,6 +109,25 @@ static CGFloat const kItemBulletWidth = 5.0f;
     CGImageRelease(img);
     
     return wallpaperImage;
+}
+
++ (void)drawGradientBackgroundInContext:(CGContextRef)context withStartColor:(UIColor *)startColor endColor:(UIColor *)endColor {
+    CGGradientRef gradient;
+    CGColorSpaceRef colorspace;
+    CGFloat locations[2] = { 0.0, 1.0 };
+    
+    NSArray *colors = @[(id)startColor.CGColor,
+                        (id)endColor.CGColor];
+    
+    colorspace = CGColorSpaceCreateDeviceRGB();
+    
+    gradient = CGGradientCreateWithColors(colorspace, (CFArrayRef)colors, locations);
+    
+    CGRect screenBounds = [UIScreen mainScreen].bounds;
+
+    CGPoint startPoint = CGPointMake(0.0f, 0.0f), endPoint = CGPointMake(0.0f, CGRectGetMaxY(screenBounds));
+    
+    CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, 0);
 }
 
 @end

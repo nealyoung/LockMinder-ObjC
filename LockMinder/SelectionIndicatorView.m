@@ -42,7 +42,7 @@ static CGFloat const kCheckboxInset = 2.0f;
         CGContextBeginPath(ctx);
         CGContextMoveToPoint(   ctx, CGRectGetWidth(rect) * 0.24f, CGRectGetHeight(rect) * 0.5f);
         CGContextAddLineToPoint(ctx, CGRectGetWidth(rect) * 0.39f, CGRectGetHeight(rect) * 0.68f);
-        CGContextAddLineToPoint(ctx, CGRectGetWidth(rect) * 0.72f, CGRectGetHeight(rect) * 0.29f);
+        CGContextAddLineToPoint(ctx, CGRectGetWidth(rect) * 0.72f, CGRectGetHeight(rect) * 0.32f);
         CGContextSetLineWidth(ctx, 2.0f);
         CGContextSetStrokeColorWithColor(ctx, [UIColor whiteColor].CGColor);
         CGContextStrokePath(ctx);

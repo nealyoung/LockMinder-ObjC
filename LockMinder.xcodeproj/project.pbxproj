@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0E194B5A19675C1C00040713 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E194B5919675C1C00040713 /* AssetsLibrary.framework */; };
-		0E3127D01960BC7C001A7238 /* ImagePreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3127CE1960BC7C001A7238 /* ImagePreviewViewController.m */; };
-		0E3127D41960BD79001A7238 /* ImageGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3127D31960BD79001A7238 /* ImageGenerator.m */; };
+		0E3127D01960BC7C001A7238 /* LMImagePreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3127CE1960BC7C001A7238 /* LMImagePreviewViewController.m */; };
+		0E3127D41960BD79001A7238 /* LMImageGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3127D31960BD79001A7238 /* LMImageGenerator.m */; };
 		0E3CFD61195FE99900CBF5DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3CFD60195FE99900CBF5DD /* main.m */; };
 		0E3CFD64195FE99900CBF5DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3CFD63195FE99900CBF5DD /* AppDelegate.m */; };
-		0E3CFD67195FE99900CBF5DD /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3CFD66195FE99900CBF5DD /* ListViewController.m */; };
+		0E3CFD67195FE99900CBF5DD /* LMListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3CFD66195FE99900CBF5DD /* LMListViewController.m */; };
 		0E3CFD6A195FE99900CBF5DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E3CFD68195FE99900CBF5DD /* Main.storyboard */; };
 		0E3CFD6C195FE99900CBF5DD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3CFD6B195FE99900CBF5DD /* Images.xcassets */; };
 		0E96A5481966AECF008E58DC /* SourceSansPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0E96A5451966AECF008E58DC /* SourceSansPro-Bold.otf */; };
@@ -39,17 +39,17 @@
 
 /* Begin PBXFileReference section */
 		0E194B5919675C1C00040713 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
-		0E3127CD1960BC7C001A7238 /* ImagePreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagePreviewViewController.h; sourceTree = "<group>"; };
-		0E3127CE1960BC7C001A7238 /* ImagePreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagePreviewViewController.m; sourceTree = "<group>"; };
-		0E3127D21960BD79001A7238 /* ImageGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageGenerator.h; sourceTree = "<group>"; };
-		0E3127D31960BD79001A7238 /* ImageGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageGenerator.m; sourceTree = "<group>"; };
+		0E3127CD1960BC7C001A7238 /* LMImagePreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMImagePreviewViewController.h; sourceTree = "<group>"; };
+		0E3127CE1960BC7C001A7238 /* LMImagePreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMImagePreviewViewController.m; sourceTree = "<group>"; };
+		0E3127D21960BD79001A7238 /* LMImageGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMImageGenerator.h; sourceTree = "<group>"; };
+		0E3127D31960BD79001A7238 /* LMImageGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMImageGenerator.m; sourceTree = "<group>"; };
 		0E3CFD5B195FE99900CBF5DD /* LockMinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LockMinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E3CFD5F195FE99900CBF5DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E3CFD60195FE99900CBF5DD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0E3CFD62195FE99900CBF5DD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0E3CFD63195FE99900CBF5DD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0E3CFD65195FE99900CBF5DD /* ListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
-		0E3CFD66195FE99900CBF5DD /* ListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		0E3CFD65195FE99900CBF5DD /* LMListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMListViewController.h; sourceTree = "<group>"; };
+		0E3CFD66195FE99900CBF5DD /* LMListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMListViewController.m; sourceTree = "<group>"; };
 		0E3CFD69195FE99900CBF5DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0E3CFD6B195FE99900CBF5DD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0E3CFD71195FE99900CBF5DD /* LockMinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LockMinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,7 +66,8 @@
 		0EE3827A196097000051CB6B /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		0EE3827D19609CDA0051CB6B /* ReminderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReminderCell.h; sourceTree = "<group>"; };
 		0EE3827E19609CDA0051CB6B /* ReminderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderCell.m; sourceTree = "<group>"; };
-		6839BE035F0447F7B2C3B698 /* Pods-LockMinder.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LockMinder.xcconfig"; path = "Pods/Pods-LockMinder.xcconfig"; sourceTree = "<group>"; };
+		43C8AB6D1A7F29B7CA6DA0FB /* Pods-LockMinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LockMinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LockMinder/Pods-LockMinder.debug.xcconfig"; sourceTree = "<group>"; };
+		8B559BA9E81EA352FA53AC7F /* Pods-LockMinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LockMinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-LockMinder/Pods-LockMinder.release.xcconfig"; sourceTree = "<group>"; };
 		FA1B95D6000E4D11927EFEA3 /* libPods-LockMinder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LockMinder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -103,10 +104,10 @@
 		0E3127D51960C3E0001A7238 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0E3CFD65195FE99900CBF5DD /* ListViewController.h */,
-				0E3CFD66195FE99900CBF5DD /* ListViewController.m */,
-				0E3127CD1960BC7C001A7238 /* ImagePreviewViewController.h */,
-				0E3127CE1960BC7C001A7238 /* ImagePreviewViewController.m */,
+				0E3CFD65195FE99900CBF5DD /* LMListViewController.h */,
+				0E3CFD66195FE99900CBF5DD /* LMListViewController.m */,
+				0E3127CD1960BC7C001A7238 /* LMImagePreviewViewController.h */,
+				0E3127CE1960BC7C001A7238 /* LMImagePreviewViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -118,7 +119,7 @@
 				0E3CFD74195FE99900CBF5DD /* LockMinderTests */,
 				0EE3827C1960975E0051CB6B /* Frameworks */,
 				0E3CFD5C195FE99900CBF5DD /* Products */,
-				6839BE035F0447F7B2C3B698 /* Pods-LockMinder.xcconfig */,
+				A022045A8F2F8BFD4C651BD2 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,8 +137,8 @@
 			children = (
 				0E3CFD62195FE99900CBF5DD /* AppDelegate.h */,
 				0E3CFD63195FE99900CBF5DD /* AppDelegate.m */,
-				0E3127D21960BD79001A7238 /* ImageGenerator.h */,
-				0E3127D31960BD79001A7238 /* ImageGenerator.m */,
+				0E3127D21960BD79001A7238 /* LMImageGenerator.h */,
+				0E3127D31960BD79001A7238 /* LMImageGenerator.m */,
 				0E0C027C1975EE87009FF032 /* Categories */,
 				0E3127D51960C3E0001A7238 /* View Controllers */,
 				0EAE7C091960E62700F063F1 /* Views */,
@@ -201,6 +202,15 @@
 			path = LockToDo;
 			sourceTree = "<group>";
 		};
+		A022045A8F2F8BFD4C651BD2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				43C8AB6D1A7F29B7CA6DA0FB /* Pods-LockMinder.debug.xcconfig */,
+				8B559BA9E81EA352FA53AC7F /* Pods-LockMinder.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -247,6 +257,7 @@
 		0E3CFD53195FE99900CBF5DD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = LM;
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Nealon Young";
 				TargetAttributes = {
@@ -314,7 +325,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-LockMinder-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LockMinder/Pods-LockMinder-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BEF3C48628B140C8B464C804 /* Check Pods Manifest.lock */ = {
@@ -339,12 +350,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E3CFD67195FE99900CBF5DD /* ListViewController.m in Sources */,
-				0E3127D01960BC7C001A7238 /* ImagePreviewViewController.m in Sources */,
+				0E3CFD67195FE99900CBF5DD /* LMListViewController.m in Sources */,
+				0E3127D01960BC7C001A7238 /* LMImagePreviewViewController.m in Sources */,
 				0EDBDC10196012BA00B2A87A /* SelectionIndicatorView.m in Sources */,
 				0E96A54D1966AF48008E58DC /* UIFont+Application.m in Sources */,
 				0E3CFD64195FE99900CBF5DD /* AppDelegate.m in Sources */,
-				0E3127D41960BD79001A7238 /* ImageGenerator.m in Sources */,
+				0E3127D41960BD79001A7238 /* LMImageGenerator.m in Sources */,
 				0E3CFD61195FE99900CBF5DD /* main.m in Sources */,
 				0EE3827F19609CDA0051CB6B /* ReminderCell.m in Sources */,
 			);
@@ -460,7 +471,7 @@
 		};
 		0E3CFD7C195FE99900CBF5DD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6839BE035F0447F7B2C3B698 /* Pods-LockMinder.xcconfig */;
+			baseConfigurationReference = 43C8AB6D1A7F29B7CA6DA0FB /* Pods-LockMinder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -473,7 +484,7 @@
 		};
 		0E3CFD7D195FE99900CBF5DD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6839BE035F0447F7B2C3B698 /* Pods-LockMinder.xcconfig */;
+			baseConfigurationReference = 8B559BA9E81EA352FA53AC7F /* Pods-LockMinder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

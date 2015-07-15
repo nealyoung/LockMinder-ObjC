@@ -1,5 +1,5 @@
 //
-//  ImageGenerator.h
+//  LMImageGenerator.h
 //  LockMinder
 //
 //  Created by Nealon Young on 6/29/14.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ImageGenerator : NSObject
+@interface LMImageGenerator : NSObject
 
 + (UIImage *)wallpaperImageWithBackground:(UIImage *)backgroundImage reminders:(NSArray *)reminders;
 
