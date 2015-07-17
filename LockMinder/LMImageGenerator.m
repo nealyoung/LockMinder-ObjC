@@ -37,7 +37,9 @@ static CGFloat const kItemBulletWidth = 5.0f;
     
 //    [backgroundImage drawInRect:imageRect];
     
-    [self drawGradientBackgroundInContext:ctx withStartColor:[UIColor redColor] endColor:[UIColor blueColor]];
+    [self drawGradientBackgroundInContext:ctx
+                           withStartColor:[UIColor colorWithRed:0.33f green:0.26f blue:0.43f alpha:1.0f]
+                                 endColor:[UIColor colorWithRed:0.24f green:0.16f blue:0.36f alpha:1.0f]];
     
     CGFloat listBackgroundHeight = kListItemXInset * 2.0f;
 

@@ -7,23 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E03926F1B5718B800CCD7B7 /* NYRoundRectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E03926E1B5718B800CCD7B7 /* NYRoundRectButton.m */; };
 		0E194B5A19675C1C00040713 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E194B5919675C1C00040713 /* AssetsLibrary.framework */; };
 		0E3127D01960BC7C001A7238 /* LMImagePreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3127CE1960BC7C001A7238 /* LMImagePreviewViewController.m */; };
 		0E3127D41960BD79001A7238 /* LMImageGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3127D31960BD79001A7238 /* LMImageGenerator.m */; };
 		0E3CFD61195FE99900CBF5DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3CFD60195FE99900CBF5DD /* main.m */; };
 		0E3CFD64195FE99900CBF5DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3CFD63195FE99900CBF5DD /* AppDelegate.m */; };
-		0E3CFD67195FE99900CBF5DD /* LMListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3CFD66195FE99900CBF5DD /* LMListViewController.m */; };
+		0E3CFD67195FE99900CBF5DD /* LMReminderSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3CFD66195FE99900CBF5DD /* LMReminderSelectionViewController.m */; };
 		0E3CFD6A195FE99900CBF5DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E3CFD68195FE99900CBF5DD /* Main.storyboard */; };
 		0E3CFD6C195FE99900CBF5DD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3CFD6B195FE99900CBF5DD /* Images.xcassets */; };
+		0E8BE62A1B585196006A9187 /* UIColor+LMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BE6291B585196006A9187 /* UIColor+LMAdditions.m */; };
 		0E96A5481966AECF008E58DC /* SourceSansPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0E96A5451966AECF008E58DC /* SourceSansPro-Bold.otf */; };
 		0E96A5491966AECF008E58DC /* SourceSansPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0E96A5461966AECF008E58DC /* SourceSansPro-Regular.otf */; };
 		0E96A54A1966AECF008E58DC /* SourceSansPro-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0E96A5471966AECF008E58DC /* SourceSansPro-Semibold.otf */; };
-		0E96A54D1966AF48008E58DC /* UIFont+Application.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E96A54C1966AF48008E58DC /* UIFont+Application.m */; };
+		0E96A54D1966AF48008E58DC /* UIFont+LMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E96A54C1966AF48008E58DC /* UIFont+LMAdditions.m */; };
 		0EC176D91960B9EA0081A63E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EC176D71960B9EA0081A63E /* Info.plist */; };
 		0EC176DB1960B9F80081A63E /* LockMinderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC176D81960B9EA0081A63E /* LockMinderTests.m */; };
-		0EDBDC10196012BA00B2A87A /* SelectionIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EDBDC0F196012BA00B2A87A /* SelectionIndicatorView.m */; };
+		0EDBDC10196012BA00B2A87A /* LMSelectionIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EDBDC0F196012BA00B2A87A /* LMSelectionIndicatorView.m */; };
 		0EE3827B196097000051CB6B /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE3827A196097000051CB6B /* EventKit.framework */; };
-		0EE3827F19609CDA0051CB6B /* ReminderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE3827E19609CDA0051CB6B /* ReminderCell.m */; };
+		0EE3827F19609CDA0051CB6B /* LMReminderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE3827E19609CDA0051CB6B /* LMReminderTableViewCell.m */; };
 		C7A3954AC86047F29510CFD4 /* libPods-LockMinder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1B95D6000E4D11927EFEA3 /* libPods-LockMinder.a */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E03926D1B5718B800CCD7B7 /* NYRoundRectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYRoundRectButton.h; sourceTree = "<group>"; };
+		0E03926E1B5718B800CCD7B7 /* NYRoundRectButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYRoundRectButton.m; sourceTree = "<group>"; };
 		0E194B5919675C1C00040713 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		0E3127CD1960BC7C001A7238 /* LMImagePreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMImagePreviewViewController.h; sourceTree = "<group>"; };
 		0E3127CE1960BC7C001A7238 /* LMImagePreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMImagePreviewViewController.m; sourceTree = "<group>"; };
@@ -48,24 +52,26 @@
 		0E3CFD60195FE99900CBF5DD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0E3CFD62195FE99900CBF5DD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0E3CFD63195FE99900CBF5DD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0E3CFD65195FE99900CBF5DD /* LMListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMListViewController.h; sourceTree = "<group>"; };
-		0E3CFD66195FE99900CBF5DD /* LMListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMListViewController.m; sourceTree = "<group>"; };
+		0E3CFD65195FE99900CBF5DD /* LMReminderSelectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMReminderSelectionViewController.h; sourceTree = "<group>"; };
+		0E3CFD66195FE99900CBF5DD /* LMReminderSelectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMReminderSelectionViewController.m; sourceTree = "<group>"; };
 		0E3CFD69195FE99900CBF5DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0E3CFD6B195FE99900CBF5DD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0E3CFD71195FE99900CBF5DD /* LockMinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LockMinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E52861219673721007F8838 /* LockMinder-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LockMinder-Prefix.pch"; sourceTree = "<group>"; };
+		0E8BE6281B585196006A9187 /* UIColor+LMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+LMAdditions.h"; sourceTree = "<group>"; };
+		0E8BE6291B585196006A9187 /* UIColor+LMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+LMAdditions.m"; sourceTree = "<group>"; };
 		0E96A5451966AECF008E58DC /* SourceSansPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.otf"; sourceTree = "<group>"; };
 		0E96A5461966AECF008E58DC /* SourceSansPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.otf"; sourceTree = "<group>"; };
 		0E96A5471966AECF008E58DC /* SourceSansPro-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Semibold.otf"; sourceTree = "<group>"; };
-		0E96A54B1966AF48008E58DC /* UIFont+Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Application.h"; sourceTree = "<group>"; };
-		0E96A54C1966AF48008E58DC /* UIFont+Application.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Application.m"; sourceTree = "<group>"; };
+		0E96A54B1966AF48008E58DC /* UIFont+LMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+LMAdditions.h"; sourceTree = "<group>"; };
+		0E96A54C1966AF48008E58DC /* UIFont+LMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+LMAdditions.m"; sourceTree = "<group>"; };
 		0EC176D71960B9EA0081A63E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = LockMinderTests/Info.plist; sourceTree = SOURCE_ROOT; };
 		0EC176D81960B9EA0081A63E /* LockMinderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LockMinderTests.m; path = LockMinderTests/LockMinderTests.m; sourceTree = SOURCE_ROOT; };
-		0EDBDC0E196012BA00B2A87A /* SelectionIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionIndicatorView.h; sourceTree = "<group>"; };
-		0EDBDC0F196012BA00B2A87A /* SelectionIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionIndicatorView.m; sourceTree = "<group>"; };
+		0EDBDC0E196012BA00B2A87A /* LMSelectionIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMSelectionIndicatorView.h; sourceTree = "<group>"; };
+		0EDBDC0F196012BA00B2A87A /* LMSelectionIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMSelectionIndicatorView.m; sourceTree = "<group>"; };
 		0EE3827A196097000051CB6B /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
-		0EE3827D19609CDA0051CB6B /* ReminderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReminderCell.h; sourceTree = "<group>"; };
-		0EE3827E19609CDA0051CB6B /* ReminderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderCell.m; sourceTree = "<group>"; };
+		0EE3827D19609CDA0051CB6B /* LMReminderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMReminderTableViewCell.h; sourceTree = "<group>"; };
+		0EE3827E19609CDA0051CB6B /* LMReminderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMReminderTableViewCell.m; sourceTree = "<group>"; };
 		43C8AB6D1A7F29B7CA6DA0FB /* Pods-LockMinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LockMinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LockMinder/Pods-LockMinder.debug.xcconfig"; sourceTree = "<group>"; };
 		8B559BA9E81EA352FA53AC7F /* Pods-LockMinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LockMinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-LockMinder/Pods-LockMinder.release.xcconfig"; sourceTree = "<group>"; };
 		FA1B95D6000E4D11927EFEA3 /* libPods-LockMinder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LockMinder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,8 +101,10 @@
 		0E0C027C1975EE87009FF032 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				0E96A54B1966AF48008E58DC /* UIFont+Application.h */,
-				0E96A54C1966AF48008E58DC /* UIFont+Application.m */,
+				0E96A54B1966AF48008E58DC /* UIFont+LMAdditions.h */,
+				0E96A54C1966AF48008E58DC /* UIFont+LMAdditions.m */,
+				0E8BE6281B585196006A9187 /* UIColor+LMAdditions.h */,
+				0E8BE6291B585196006A9187 /* UIColor+LMAdditions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -104,8 +112,8 @@
 		0E3127D51960C3E0001A7238 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0E3CFD65195FE99900CBF5DD /* LMListViewController.h */,
-				0E3CFD66195FE99900CBF5DD /* LMListViewController.m */,
+				0E3CFD65195FE99900CBF5DD /* LMReminderSelectionViewController.h */,
+				0E3CFD66195FE99900CBF5DD /* LMReminderSelectionViewController.m */,
 				0E3127CD1960BC7C001A7238 /* LMImagePreviewViewController.h */,
 				0E3127CE1960BC7C001A7238 /* LMImagePreviewViewController.m */,
 			);
@@ -142,6 +150,7 @@
 				0E0C027C1975EE87009FF032 /* Categories */,
 				0E3127D51960C3E0001A7238 /* View Controllers */,
 				0EAE7C091960E62700F063F1 /* Views */,
+				0E8BE62B1B58A6C3006A9187 /* Vendor */,
 				0E3CFD68195FE99900CBF5DD /* Main.storyboard */,
 				0E3CFD6B195FE99900CBF5DD /* Images.xcassets */,
 				0E3CFD5E195FE99900CBF5DD /* Supporting Files */,
@@ -170,6 +179,15 @@
 			path = LockToDoTests;
 			sourceTree = "<group>";
 		};
+		0E8BE62B1B58A6C3006A9187 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				0E03926D1B5718B800CCD7B7 /* NYRoundRectButton.h */,
+				0E03926E1B5718B800CCD7B7 /* NYRoundRectButton.m */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
 		0E96A5441966AECF008E58DC /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,10 +201,10 @@
 		0EAE7C091960E62700F063F1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0EDBDC0E196012BA00B2A87A /* SelectionIndicatorView.h */,
-				0EDBDC0F196012BA00B2A87A /* SelectionIndicatorView.m */,
-				0EE3827D19609CDA0051CB6B /* ReminderCell.h */,
-				0EE3827E19609CDA0051CB6B /* ReminderCell.m */,
+				0EDBDC0E196012BA00B2A87A /* LMSelectionIndicatorView.h */,
+				0EDBDC0F196012BA00B2A87A /* LMSelectionIndicatorView.m */,
+				0EE3827D19609CDA0051CB6B /* LMReminderTableViewCell.h */,
+				0EE3827E19609CDA0051CB6B /* LMReminderTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -350,14 +368,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E3CFD67195FE99900CBF5DD /* LMListViewController.m in Sources */,
+				0E3CFD67195FE99900CBF5DD /* LMReminderSelectionViewController.m in Sources */,
 				0E3127D01960BC7C001A7238 /* LMImagePreviewViewController.m in Sources */,
-				0EDBDC10196012BA00B2A87A /* SelectionIndicatorView.m in Sources */,
-				0E96A54D1966AF48008E58DC /* UIFont+Application.m in Sources */,
+				0E03926F1B5718B800CCD7B7 /* NYRoundRectButton.m in Sources */,
+				0EDBDC10196012BA00B2A87A /* LMSelectionIndicatorView.m in Sources */,
+				0E96A54D1966AF48008E58DC /* UIFont+LMAdditions.m in Sources */,
 				0E3CFD64195FE99900CBF5DD /* AppDelegate.m in Sources */,
 				0E3127D41960BD79001A7238 /* LMImageGenerator.m in Sources */,
 				0E3CFD61195FE99900CBF5DD /* main.m in Sources */,
-				0EE3827F19609CDA0051CB6B /* ReminderCell.m in Sources */,
+				0E8BE62A1B585196006A9187 /* UIColor+LMAdditions.m in Sources */,
+				0EE3827F19609CDA0051CB6B /* LMReminderTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

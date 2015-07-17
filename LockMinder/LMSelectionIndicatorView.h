@@ -1,5 +1,5 @@
 //
-//  SelectionIndicatorView.h
+//  LMSelectionIndicatorView.h
 //  LockMinder
 //
 //  Created by Nealon Young on 6/29/14.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SelectionIndicatorView : UIView
+@interface LMSelectionIndicatorView : UIView
 
 @property (nonatomic) BOOL selected;
 

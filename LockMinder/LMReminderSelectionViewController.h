@@ -1,5 +1,5 @@
 //
-//  LMListViewController.h
+//  LMReminderSelectionViewController.h
 //  LockMinder
 //
 //  Created by Nealon Young on 6/28/14.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LMListViewController : UIViewController
+@interface LMReminderSelectionViewController : UIViewController
 
 @end
 

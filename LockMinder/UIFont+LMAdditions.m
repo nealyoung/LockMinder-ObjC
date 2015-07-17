@@ -1,14 +1,14 @@
 //
-//  UIFont+Application.m
+//  UIFont+LMAdditions.m
 //  LockMinder
 //
 //  Created by Nealon Young on 3/3/14.
 //  Copyright (c) 2014 Nealon Young. All rights reserved.
 //
 
-#import "UIFont+Application.h"
+#import "UIFont+LMAdditions.h"
 
-@implementation UIFont (Application)
+@implementation UIFont (LMAdditions)
 
 + (UIFont *)applicationFontOfSize:(CGFloat)size {
     return [UIFont fontWithName:@"SourceSansPro-Regular" size:size];

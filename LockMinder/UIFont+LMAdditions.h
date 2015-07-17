@@ -1,5 +1,5 @@
 //
-//  UIFont+Application.h
+//  UIFont+LMAdditions.h
 //  LockMinder
 //
 //  Created by Nealon Young on 3/3/14.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIFont (Application)
+@interface UIFont (LMAdditions)
 
 + (UIFont *)applicationFontOfSize:(CGFloat)size;
 + (UIFont *)boldApplicationFontOfSize:(CGFloat)size;

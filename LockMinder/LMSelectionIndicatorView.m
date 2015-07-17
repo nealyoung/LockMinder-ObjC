@@ -1,14 +1,14 @@
 //
-//  SelectionIndicatorView.m
+//  LMSelectionIndicatorView.m
 //  LockMinder
 //
 //  Created by Nealon Young on 6/29/14.
 //  Copyright (c) 2014 Nealon Young. All rights reserved.
 //
 
-#import "SelectionIndicatorView.h"
+#import "LMSelectionIndicatorView.h"
 
-@interface SelectionIndicatorView ()
+@interface LMSelectionIndicatorView ()
 
 @property UIImageView *imageView;
 
@@ -16,7 +16,7 @@
 
 static CGFloat const kCheckboxInset = 2.0f;
 
-@implementation SelectionIndicatorView
+@implementation LMSelectionIndicatorView
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
@@ -41,8 +41,8 @@ static CGFloat const kCheckboxInset = 2.0f;
         // Draw the checkmark
         CGContextBeginPath(ctx);
         CGContextMoveToPoint(   ctx, CGRectGetWidth(rect) * 0.24f, CGRectGetHeight(rect) * 0.5f);
-        CGContextAddLineToPoint(ctx, CGRectGetWidth(rect) * 0.39f, CGRectGetHeight(rect) * 0.68f);
-        CGContextAddLineToPoint(ctx, CGRectGetWidth(rect) * 0.72f, CGRectGetHeight(rect) * 0.32f);
+        CGContextAddLineToPoint(ctx, CGRectGetWidth(rect) * 0.41f, CGRectGetHeight(rect) * 0.66f);
+        CGContextAddLineToPoint(ctx, CGRectGetWidth(rect) * 0.72f, CGRectGetHeight(rect) * 0.34f);
         CGContextSetLineWidth(ctx, 2.0f);
         CGContextSetStrokeColorWithColor(ctx, [UIColor whiteColor].CGColor);
         CGContextStrokePath(ctx);

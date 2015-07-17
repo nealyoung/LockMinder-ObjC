@@ -1,5 +1,5 @@
 //
-//  LMListViewController.m
+//  LMReminderSelectionViewController.m
 //  LockMinder
 //
 //  Created by Nealon Young on 6/28/14.
@@ -7,29 +7,58 @@
 //
 
 #import <EventKit/EventKit.h>
-#import "LMListViewController.h"
+#import "LMReminderSelectionViewController.h"
 #import "LMImageGenerator.h"
 #import "LMImagePreviewViewController.h"
-#import "ReminderCell.h"
+#import "NYRoundRectButton.h"
+#import "LMReminderTableViewCell.h"
 #import "SVProgressHUD.h"
 
-@interface LMListViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface LMReminderSelectionViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property EKEventStore *eventStore;
 @property NSMutableArray *reminders;
 @property NSMutableArray *selectedReminders;
 @property IBOutlet UITableView *tableView;
+@property IBOutlet UIView *previewButtonBackgroundView;
+@property IBOutlet NYRoundRectButton *previewButton;
 
 - (void)importReminders;
 
 @end
 
-@implementation LMListViewController
+@implementation LMReminderSelectionViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.eventStore = [[EKEventStore alloc] init];
     [self importReminders];
+    
+//    self.previewButton.type = NYRoundRectButtonTypeBordered;
+    
+    // Add a 1px border to the top of the preview button's background view
+    UIView *topBorderView = [[UIView alloc] initWithFrame:CGRectZero];
+    [topBorderView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    topBorderView.backgroundColor = [UIColor grayColor];
+    [self.previewButtonBackgroundView addSubview:topBorderView];
+    
+    [self.previewButtonBackgroundView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[topBorderView]|"
+                                                                                             options:0
+                                                                                             metrics:nil
+                                                                                               views:NSDictionaryOfVariableBindings(topBorderView)]];
+    
+    [self.previewButtonBackgroundView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[topBorderView]"
+                                                                                             options:0
+                                                                                             metrics:nil
+                                                                                               views:NSDictionaryOfVariableBindings(topBorderView)]];
+    
+    [self.previewButtonBackgroundView addConstraint:[NSLayoutConstraint constraintWithItem:topBorderView
+                                                                                 attribute:NSLayoutAttributeHeight
+                                                                                 relatedBy:NSLayoutRelationEqual
+                                                                                    toItem:nil
+                                                                                 attribute:NSLayoutAttributeNotAnAttribute
+                                                                                multiplier:0.0f
+                                                                                  constant:1.0f / [UIScreen mainScreen].scale]];
 }
 
 - (void)importReminders {
@@ -93,17 +122,17 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (![self.reminders count]) {
         tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        tableView.backgroundColor = [UIColor colorWithWhite:0.92f alpha:1.0f];
+//        tableView.backgroundColor = [UIColor colorWithWhite:0.92f alpha:1.0f];
     } else {
         tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-        tableView.backgroundColor = [UIColor whiteColor];
+//        tableView.backgroundColor = [UIColor whiteColor];
     }
     
     return [self.reminders count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ReminderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ReminderCell" forIndexPath:indexPath];
+    LMReminderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ReminderCell" forIndexPath:indexPath];
     cell.reminderLabel.font = [UIFont applicationFontOfSize:18.0f];
     EKReminder *reminder = self.reminders[indexPath.row];
     cell.reminderLabel.text = reminder.title;
@@ -130,8 +159,9 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UILabel *headerView = [[UILabel alloc] initWithFrame:CGRectZero];
-    headerView.backgroundColor = [UIColor colorWithWhite:0.92f alpha:1.0f];
+//    headerView.backgroundColor = [UIColor colorWithWhite:0.92f alpha:1.0f];
     headerView.font = [UIFont applicationFontOfSize:15.0f];
+    headerView.textColor = [UIColor colorWithWhite:0.12f alpha:1.0f];
     headerView.textAlignment = NSTextAlignmentCenter;
     
     if ([self.reminders count]) {

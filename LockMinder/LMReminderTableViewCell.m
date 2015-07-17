@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Nealon Young. All rights reserved.
 //
 
-#import "ReminderCell.h"
+#import "LMReminderTableViewCell.h"
 
-@implementation ReminderCell
+@implementation LMReminderTableViewCell
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

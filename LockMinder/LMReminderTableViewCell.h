@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SelectionIndicatorView.h"
+#import "LMSelectionIndicatorView.h"
 
-@interface ReminderCell : UITableViewCell
+@interface LMReminderTableViewCell : UITableViewCell
 
-@property IBOutlet SelectionIndicatorView *selectionIndicatorView;
+@property IBOutlet LMSelectionIndicatorView *selectionIndicatorView;
 @property IBOutlet UILabel *reminderLabel;
 
 @end
