@@ -17,6 +17,13 @@
 		0E3CFD6A195FE99900CBF5DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E3CFD68195FE99900CBF5DD /* Main.storyboard */; };
 		0E3CFD6C195FE99900CBF5DD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3CFD6B195FE99900CBF5DD /* Images.xcassets */; };
 		0E8BE62A1B585196006A9187 /* UIColor+LMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BE6291B585196006A9187 /* UIColor+LMAdditions.m */; };
+		0E8BE6351B58B6B8006A9187 /* NYModalPresentationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BE62D1B58B6B8006A9187 /* NYModalPresentationManager.m */; };
+		0E8BE6361B58B6B8006A9187 /* NYModalPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BE62F1B58B6B8006A9187 /* NYModalPresentationController.m */; };
+		0E8BE6371B58B6B8006A9187 /* NYModalPresentationAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BE6311B58B6B8006A9187 /* NYModalPresentationAnimationController.m */; };
+		0E8BE6381B58B6B8006A9187 /* NYModalDismissalAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BE6331B58B6B8006A9187 /* NYModalDismissalAnimationController.m */; };
+		0E8BE63F1B58B6FE006A9187 /* NYAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BE6391B58B6FE006A9187 /* NYAlertViewController.m */; };
+		0E8BE6401B58B6FE006A9187 /* NYAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BE63B1B58B6FE006A9187 /* NYAlertView.m */; };
+		0E8BE6411B58B6FE006A9187 /* NYAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BE63D1B58B6FE006A9187 /* NYAlertAction.m */; };
 		0E96A5481966AECF008E58DC /* SourceSansPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0E96A5451966AECF008E58DC /* SourceSansPro-Bold.otf */; };
 		0E96A5491966AECF008E58DC /* SourceSansPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0E96A5461966AECF008E58DC /* SourceSansPro-Regular.otf */; };
 		0E96A54A1966AECF008E58DC /* SourceSansPro-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0E96A5471966AECF008E58DC /* SourceSansPro-Semibold.otf */; };
@@ -60,6 +67,20 @@
 		0E52861219673721007F8838 /* LockMinder-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LockMinder-Prefix.pch"; sourceTree = "<group>"; };
 		0E8BE6281B585196006A9187 /* UIColor+LMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+LMAdditions.h"; sourceTree = "<group>"; };
 		0E8BE6291B585196006A9187 /* UIColor+LMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+LMAdditions.m"; sourceTree = "<group>"; };
+		0E8BE62D1B58B6B8006A9187 /* NYModalPresentationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYModalPresentationManager.m; sourceTree = "<group>"; };
+		0E8BE62E1B58B6B8006A9187 /* NYModalPresentationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYModalPresentationManager.h; sourceTree = "<group>"; };
+		0E8BE62F1B58B6B8006A9187 /* NYModalPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYModalPresentationController.m; sourceTree = "<group>"; };
+		0E8BE6301B58B6B8006A9187 /* NYModalPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYModalPresentationController.h; sourceTree = "<group>"; };
+		0E8BE6311B58B6B8006A9187 /* NYModalPresentationAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYModalPresentationAnimationController.m; sourceTree = "<group>"; };
+		0E8BE6321B58B6B8006A9187 /* NYModalPresentationAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYModalPresentationAnimationController.h; sourceTree = "<group>"; };
+		0E8BE6331B58B6B8006A9187 /* NYModalDismissalAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYModalDismissalAnimationController.m; sourceTree = "<group>"; };
+		0E8BE6341B58B6B8006A9187 /* NYModalDismissalAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYModalDismissalAnimationController.h; sourceTree = "<group>"; };
+		0E8BE6391B58B6FE006A9187 /* NYAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYAlertViewController.m; sourceTree = "<group>"; };
+		0E8BE63A1B58B6FE006A9187 /* NYAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYAlertViewController.h; sourceTree = "<group>"; };
+		0E8BE63B1B58B6FE006A9187 /* NYAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYAlertView.m; sourceTree = "<group>"; };
+		0E8BE63C1B58B6FE006A9187 /* NYAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYAlertView.h; sourceTree = "<group>"; };
+		0E8BE63D1B58B6FE006A9187 /* NYAlertAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYAlertAction.m; sourceTree = "<group>"; };
+		0E8BE63E1B58B6FE006A9187 /* NYAlertAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYAlertAction.h; sourceTree = "<group>"; };
 		0E96A5451966AECF008E58DC /* SourceSansPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.otf"; sourceTree = "<group>"; };
 		0E96A5461966AECF008E58DC /* SourceSansPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.otf"; sourceTree = "<group>"; };
 		0E96A5471966AECF008E58DC /* SourceSansPro-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Semibold.otf"; sourceTree = "<group>"; };
@@ -184,6 +205,20 @@
 			children = (
 				0E03926D1B5718B800CCD7B7 /* NYRoundRectButton.h */,
 				0E03926E1B5718B800CCD7B7 /* NYRoundRectButton.m */,
+				0E8BE6391B58B6FE006A9187 /* NYAlertViewController.m */,
+				0E8BE63A1B58B6FE006A9187 /* NYAlertViewController.h */,
+				0E8BE63B1B58B6FE006A9187 /* NYAlertView.m */,
+				0E8BE63C1B58B6FE006A9187 /* NYAlertView.h */,
+				0E8BE63D1B58B6FE006A9187 /* NYAlertAction.m */,
+				0E8BE63E1B58B6FE006A9187 /* NYAlertAction.h */,
+				0E8BE62D1B58B6B8006A9187 /* NYModalPresentationManager.m */,
+				0E8BE62E1B58B6B8006A9187 /* NYModalPresentationManager.h */,
+				0E8BE62F1B58B6B8006A9187 /* NYModalPresentationController.m */,
+				0E8BE6301B58B6B8006A9187 /* NYModalPresentationController.h */,
+				0E8BE6311B58B6B8006A9187 /* NYModalPresentationAnimationController.m */,
+				0E8BE6321B58B6B8006A9187 /* NYModalPresentationAnimationController.h */,
+				0E8BE6331B58B6B8006A9187 /* NYModalDismissalAnimationController.m */,
+				0E8BE6341B58B6B8006A9187 /* NYModalDismissalAnimationController.h */,
 			);
 			name = Vendor;
 			sourceTree = "<group>";
@@ -368,14 +403,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E8BE6411B58B6FE006A9187 /* NYAlertAction.m in Sources */,
+				0E8BE6371B58B6B8006A9187 /* NYModalPresentationAnimationController.m in Sources */,
 				0E3CFD67195FE99900CBF5DD /* LMReminderSelectionViewController.m in Sources */,
+				0E8BE6381B58B6B8006A9187 /* NYModalDismissalAnimationController.m in Sources */,
 				0E3127D01960BC7C001A7238 /* LMImagePreviewViewController.m in Sources */,
 				0E03926F1B5718B800CCD7B7 /* NYRoundRectButton.m in Sources */,
 				0EDBDC10196012BA00B2A87A /* LMSelectionIndicatorView.m in Sources */,
+				0E8BE63F1B58B6FE006A9187 /* NYAlertViewController.m in Sources */,
 				0E96A54D1966AF48008E58DC /* UIFont+LMAdditions.m in Sources */,
 				0E3CFD64195FE99900CBF5DD /* AppDelegate.m in Sources */,
+				0E8BE6401B58B6FE006A9187 /* NYAlertView.m in Sources */,
+				0E8BE6351B58B6B8006A9187 /* NYModalPresentationManager.m in Sources */,
 				0E3127D41960BD79001A7238 /* LMImageGenerator.m in Sources */,
 				0E3CFD61195FE99900CBF5DD /* main.m in Sources */,
+				0E8BE6361B58B6B8006A9187 /* NYModalPresentationController.m in Sources */,
 				0E8BE62A1B585196006A9187 /* UIColor+LMAdditions.m in Sources */,
 				0EE3827F19609CDA0051CB6B /* LMReminderTableViewCell.m in Sources */,
 			);

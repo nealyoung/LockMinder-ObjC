@@ -10,6 +10,8 @@
 #import "LMReminderSelectionViewController.h"
 #import "LMImageGenerator.h"
 #import "LMImagePreviewViewController.h"
+#import "NYAlertViewController.h"
+#import "NYModalPresentationManager.h"
 #import "NYRoundRectButton.h"
 #import "LMReminderTableViewCell.h"
 #import "SVProgressHUD.h"
@@ -33,8 +35,6 @@
     [super viewDidLoad];
     self.eventStore = [[EKEventStore alloc] init];
     [self importReminders];
-    
-//    self.previewButton.type = NYRoundRectButtonTypeBordered;
     
     // Add a 1px border to the top of the preview button's background view
     UIView *topBorderView = [[UIView alloc] initWithFrame:CGRectZero];
@@ -63,8 +63,16 @@
 
 - (void)importReminders {
     [self.eventStore requestAccessToEntityType:EKEntityTypeReminder completion:^(BOOL granted, NSError *error) {
-        if (!granted) {
-            [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"You must grant access to reminders to use LockMinder", nil)];
+        if (!granted || error) {
+            NYAlertViewController *alertViewController = [[NYAlertViewController alloc] initWithNibName:nil bundle:nil];
+            alertViewController.title = NSLocalizedString(@"Reminder Access Declined", nil);
+            alertViewController.message = NSLocalizedString(@"Use the Settings app to allow LockMinder access to your reminders", nil);
+            
+            [alertViewController addAction:[NYAlertAction actionWithTitle:NSLocalizedString(@"Ok", nil) style:UIAlertActionStyleCancel handler:^(NYAlertAction *action) {
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }]];
+            
+            [self presentViewController:alertViewController animated:YES completion:nil];
             return;
         }
         
@@ -84,8 +92,17 @@
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
-    if (![self.reminders count]) {
-        [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Select at least one reminder", nil)];
+    if (![[self.tableView indexPathsForSelectedRows] count]) {
+//        [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Select at least one reminder", nil)];
+        NYAlertViewController *alertViewController = [[NYAlertViewController alloc] initWithNibName:nil bundle:nil];
+        alertViewController.title = NSLocalizedString(@"No Reminders Selected", nil);
+        alertViewController.message = NSLocalizedString(@"Select at least one reminder to generate a wallpaper", nil);
+        
+        [alertViewController addAction:[NYAlertAction actionWithTitle:NSLocalizedString(@"Ok", nil) style:UIAlertActionStyleCancel handler:^(NYAlertAction *action) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }]];
+        
+        [self presentViewController:alertViewController animated:YES completion:nil];
         return NO;
     }
     

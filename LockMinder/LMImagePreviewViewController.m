@@ -9,6 +9,7 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "LMImagePreviewViewController.h"
 #import "LMImageGenerator.h"
+#import "NYAlertViewController.h"
 #import "SVProgressHUD.h"
 
 @interface LMImagePreviewViewController ()
@@ -60,8 +61,20 @@ static NSString * const kSavedPhotosAlbumName = @"LockMinder Wallpapers";
     if (error) {
         [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Error saving wallpaper", nil)];
     } else {
-        [SVProgressHUD showSuccessWithStatus:@"Wallpaper saved"];
-        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+        [SVProgressHUD dismiss];
+        
+        UIViewController *presentingViewController = self.presentingViewController;
+        [presentingViewController dismissViewControllerAnimated:YES completion:nil];
+        
+        NYAlertViewController *alertViewController = [[NYAlertViewController alloc] initWithNibName:nil bundle:nil];
+        alertViewController.title = NSLocalizedString(@"Wallpaper Saved", nil);
+        alertViewController.message = NSLocalizedString(@"Your wallpaper was saved to the 'LockMinder Wallpapers' album in the Photos app", nil);
+        
+        [alertViewController addAction:[NYAlertAction actionWithTitle:NSLocalizedString(@"Ok", nil) style:UIAlertActionStyleCancel handler:^(NYAlertAction *action) {
+            [presentingViewController dismissViewControllerAnimated:YES completion:nil];
+        }]];
+        
+        [presentingViewController presentViewController:alertViewController animated:YES completion:nil];
     }
 }
 
