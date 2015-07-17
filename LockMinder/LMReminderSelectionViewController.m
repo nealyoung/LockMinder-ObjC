@@ -177,14 +177,17 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UILabel *headerView = [[UILabel alloc] initWithFrame:CGRectZero];
 //    headerView.backgroundColor = [UIColor colorWithWhite:0.92f alpha:1.0f];
-    headerView.font = [UIFont applicationFontOfSize:15.0f];
-    headerView.textColor = [UIColor colorWithWhite:0.12f alpha:1.0f];
+    headerView.textColor = [UIColor colorWithWhite:0.16f alpha:1.0f];
     headerView.textAlignment = NSTextAlignmentCenter;
     
     if ([self.reminders count]) {
+        headerView.font = [UIFont applicationFontOfSize:15.0f];
         headerView.text = NSLocalizedString(@"Select reminders to appear on your wallpaper", nil);
+        self.tableView.scrollEnabled = YES;
     } else {
+        headerView.font = [UIFont semiboldApplicationFontOfSize:17.0f];
         headerView.text = NSLocalizedString(@"No reminders", nil);
+        self.tableView.scrollEnabled = NO;
     }
     
     return headerView;
