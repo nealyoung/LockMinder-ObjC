@@ -61,6 +61,14 @@
                                                                                   constant:1.0f / [UIScreen mainScreen].scale]];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    for (NSIndexPath *indexPath in [self.tableView indexPathsForSelectedRows]) {
+        [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
+    }
+    
+    [self importReminders];
+}
+
 - (void)importReminders {
     [self.eventStore requestAccessToEntityType:EKEntityTypeReminder completion:^(BOOL granted, NSError *error) {
         if (!granted || error) {
