@@ -69,6 +69,45 @@
     [self importReminders];
 }
 
+- (void)removeExistingAndGenerateExampleReminders {
+    EKCalendar *defaultReminderCalendar = self.eventStore.defaultCalendarForNewReminders;
+    NSPredicate *completedRemindersPredicate = [self.eventStore predicateForIncompleteRemindersWithDueDateStarting:nil
+                                                                                                            ending:nil
+                                                                                                         calendars:@[defaultReminderCalendar]];
+    
+    [self.eventStore fetchRemindersMatchingPredicate:completedRemindersPredicate completion:^(NSArray *reminders) {
+        for (EKReminder *reminder in reminders) {
+            [self.eventStore removeReminder:reminder commit:YES error:NULL];
+        }
+        
+        EKReminder *newReminder1 = [EKReminder reminderWithEventStore:self.eventStore];
+        newReminder1.title = @"Buy milk";
+        [self.eventStore saveReminder:newReminder1 commit:YES error:NULL];
+        
+        EKReminder *newReminder2 = [EKReminder reminderWithEventStore:self.eventStore];
+        newReminder2.title = @"Pay water bill";
+        [self.eventStore saveReminder:newReminder2 commit:YES error:NULL];
+        
+        EKReminder *newReminder3 = [EKReminder reminderWithEventStore:self.eventStore];
+        newReminder3.title = @"Pick up dry cleaning";
+        [self.eventStore saveReminder:newReminder3 commit:YES error:NULL];
+        
+        EKReminder *newReminder4 = [EKReminder reminderWithEventStore:self.eventStore];
+        newReminder4.title = @"Take out trash";
+        [self.eventStore saveReminder:newReminder4 commit:YES error:NULL];
+        
+        EKReminder *newReminder5 = [EKReminder reminderWithEventStore:self.eventStore];
+        newReminder5.title = @"Submit screenshots to App Store";
+        [self.eventStore saveReminder:newReminder5 commit:YES error:NULL];
+        
+        self.reminders = [NSMutableArray arrayWithArray:@[newReminder1, newReminder2, newReminder3, newReminder4, newReminder5]];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    }];
+}
+
 - (void)importReminders {
     [self.eventStore requestAccessToEntityType:EKEntityTypeReminder completion:^(BOOL granted, NSError *error) {
         if (!granted || error) {
@@ -76,14 +115,19 @@
             alertViewController.title = NSLocalizedString(@"Reminder Access Declined", nil);
             alertViewController.message = NSLocalizedString(@"Use the Settings app to allow LockMinder access to your reminders", nil);
             
-            [alertViewController addAction:[NYAlertAction actionWithTitle:NSLocalizedString(@"Ok", nil) style:UIAlertActionStyleCancel handler:^(NYAlertAction *action) {
-                [self dismissViewControllerAnimated:YES completion:nil];
-            }]];
+            [alertViewController addAction:[NYAlertAction actionWithTitle:NSLocalizedString(@"Ok", nil)
+                                                                    style:UIAlertActionStyleCancel
+                                                                  handler:^(NYAlertAction *action) {
+                                                                      [self dismissViewControllerAnimated:YES completion:nil];
+                                                                  }]];
             
             [self presentViewController:alertViewController animated:YES completion:nil];
             return;
         }
         
+#if TARGET_IPHONE_SIMULATOR
+        [self removeExistingAndGenerateExampleReminders];
+#else
         EKCalendar *defaultReminderCalendar = self.eventStore.defaultCalendarForNewReminders;
         NSPredicate *completedRemindersPredicate = [self.eventStore predicateForIncompleteRemindersWithDueDateStarting:nil
                                                                                                                 ending:nil
@@ -96,6 +140,7 @@
                 [self.tableView reloadData];
             });
         }];
+#endif
     }];
 }
 

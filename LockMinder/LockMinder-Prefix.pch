@@ -9,7 +9,6 @@
 #ifndef LockMinder_PrefixHeader_pch
 #define LockMinder_PrefixHeader_pch
 
-#import "SVProgressHUD.h"
 #import "UIColor+LMAdditions.h"
 #import "UIFont+LMAdditions.h"
 
