@@ -114,16 +114,16 @@ static CGFloat const kItemBulletWidth = 5.0f;
 }
 
 + (void)drawGradientBackgroundInContext:(CGContextRef)context withStartColor:(UIColor *)startColor endColor:(UIColor *)endColor {
-    CGGradientRef gradient;
-    CGColorSpaceRef colorspace;
     CGFloat locations[2] = { 0.0, 1.0 };
     
     NSArray *colors = @[(id)startColor.CGColor,
                         (id)endColor.CGColor];
     
-    colorspace = CGColorSpaceCreateDeviceRGB();
+    CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
     
-    gradient = CGGradientCreateWithColors(colorspace, (CFArrayRef)colors, locations);
+    CGGradientRef gradient = CGGradientCreateWithColors(colorspace, (CFArrayRef)colors, locations);
+    
+    free(locations);
     
     CGRect screenBounds = [UIScreen mainScreen].bounds;
 
