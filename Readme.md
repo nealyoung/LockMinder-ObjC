@@ -1,5 +1,7 @@
 #LockMinder
 
+This repo is no longer maintained, please see the [Swift rewrite](https://github.com/nealyoung/lockminder/).
+
 ![Icon](https://github.com/nealyoung/LockMinder-ObjC/raw/master/icon.png)
 
 LockMinder is a simple iOS app that imports your incomplete reminders from the Reminders app, and creates a lock screen wallpaper containing a text overlay with a list of selected reminders.
